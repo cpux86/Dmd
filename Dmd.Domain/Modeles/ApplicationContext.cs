@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dmd.DataModeles;
+using Dmd.Domain.Modeles.Entityes;
 
 namespace Dmd.Domain.Modeles
 {
@@ -15,8 +15,8 @@ namespace Dmd.Domain.Modeles
         {
             Database.EnsureCreated();   // создаем базу данных при первом обращении
         }
-        public DbSet<Dmd.DataModeles.Properties> Properties { get; set; }
-        public DbSet<Dmd.DataModeles.Product> Product { get; set; }
-        public DbSet<Dmd.DataModeles.Order> Order { get; set; }
+        public DbSet<Properties> Properties { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Order> Order { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dmd.Domain.Modeles
+namespace Dmd.Domain.Modeles.Entityes
 {
     public class Catalog
     {
