@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Dmd.Domain.Modeles;
 
 namespace Dmd.Api
 {
@@ -26,6 +28,10 @@ namespace Dmd.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DmdApiContext")));
+
+            //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=testDb;Integrated Security=True"));
+            //services.AddTransient<>
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
