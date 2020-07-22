@@ -9,26 +9,26 @@ namespace Dmd.Domain.Modeles
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Entityes.User> Users { get; set; }
         public DbSet<Properties> Properties { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Order> Order { get; set; }
 
-        public ApplicationContext(DbContextOptions<ApplicationContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated();   // создаем базу данных при первом обращении
-        }
-        //public ApplicationContext()
+        //public ApplicationContext(DbContextOptions<ApplicationContext> options)
+        //    : base(options)
+        //{
+        //    Database.EnsureCreated();   // создаем базу данных при первом обращении
+        //}
+        //public ApplicationContext() : base();
         //{
         //    Database.EnsureCreated();
         //}
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(
-        //        @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
+        }
 
 
     }
