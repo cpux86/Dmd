@@ -19,15 +19,19 @@ namespace Dmd.Domain.Modeles
         //{
         //    Database.EnsureCreated();   // создаем базу данных при первом обращении
         //}
-        //public ApplicationContext() : base();
-        //{
-        //    Database.EnsureCreated();
-        //}
+        public ApplicationContext()
+        {
+            Database.EnsureCreated();
+        }
 
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(
+        //        @"Server=(localdb)\MSSQLLocaldb;Database=Blogging;Integrated Security=True");
+        //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
+            optionsBuilder.UseSqlite("Filename=Mobile.db");
         }
 
 

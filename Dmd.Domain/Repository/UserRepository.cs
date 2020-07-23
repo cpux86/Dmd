@@ -9,29 +9,57 @@ namespace Dmd.Domain.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly ApplicationContext _user;
+        private readonly ApplicationContext _db;
         public UserRepository()
         {
-            this._user = new ApplicationContext();
+            this._db = new ApplicationContext();
         }
-
+        /// <summary>
+        /// Вернуть всех пользователей из БД
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<User> GetUserList()
         {
-            return _user.Users;
+            return _db.Users;
         }
 
         public void Add(User user)
         {
-            _user.Users.Add(user);
+            _db.Users.Add(user);
         }
+        #region MyRegion
 
-        //public User GetUserById(int id)
-        //{
-
-        //}
+        #endregion
+        /// <summary>
+        /// Возращаем пользователья по его id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public User GetUserById(int id)
+        {
+            return new User();
+        }
+        /// <summary>
+        /// Получаем пользователья по номеру телефона
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        public User GetUserByPhone(string phone)
+        {
+            return new User();
+        }
+        /// <summary>
+        /// Получаем пользователья по адресу электронной почты
+        /// </summary>
+        /// <param name="emain"></param>
+        /// <returns></returns>
+        public User GetUserByEmain(string emain)
+        {
+            return new User();
+        }
         public void Save()
         {
-            _user.SaveChanges();
+            _db.SaveChanges();
         }
 
     }
