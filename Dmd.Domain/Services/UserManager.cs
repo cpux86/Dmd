@@ -1,4 +1,5 @@
 ﻿using Dmd.Domain.Interface;
+using Dmd.Domain.Modeles.Entityes;
 using Dmd.Domain.Repository;
 using System;
 using System.Collections.Generic;
@@ -8,27 +9,10 @@ namespace Dmd.Domain.Services
 {
     class UserManager : IUserManager
     {
-        private readonly IUserRepository _repo;
+        private readonly IUserRepository _db;
         public UserManager()
         {
-            this._repo = new UserRepository();
-        }
-        /// <summary>
-        /// Создаем нового пользователья
-        /// </summary>
-        public void CreateUser()
-        {
-            
-        }
-
-        public void DeleteUser()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditUser()
-        {
-            throw new NotImplementedException();
+            this._db = new UserRepository();
         }
     }
 }
