@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Dmd.Domain.Repository
 {
-    class ProductRepository : BaseRepository
+    public class ProductRepository
     {
         private readonly ApplicationContext _db;
         public ProductRepository()
