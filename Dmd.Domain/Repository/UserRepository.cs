@@ -25,13 +25,14 @@ namespace Dmd.Domain.Repository
         /// <param name="user"></param>
         public void CreateUser(User user)
         {
-            // проверка на сеществования пользователей с emain  и phone
-             IQueryable<User> r = _db.Users.Where(u => u.Email == user.Email || u.Phone == user.Phone);
-            var t = r.Count();
-            foreach (var item in r)
-            {
-                var g = item;
-            }
+            //// проверка на сеществования пользователей с emain  и phone
+            //IQueryable<User> r = _db.Users.Where(u => u.Email == user.Email || u.Phone == user.Phone);
+            //var t = r.Count();
+            //foreach (var item in r)
+            //{
+            //    var g = item;
+            //}
+            _db.Add(user);
 
         }
 

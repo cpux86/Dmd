@@ -10,16 +10,16 @@ namespace Dmd.UnitTests
         [Fact]
         public void AddUser()
         {
-            User user = new User() { FirstName = "Владимир", LastName="Каськов", Email = "cpux86@mail.ru", Phone = "+79997961175" };
+            User user = new User() { /*FirstName = "Владимир",*/ LastName="Каськов", Email = "cpux86@mail.ru", Phone = "+79997961175" };
             UserRepository rep = new UserRepository();
             rep.CreateUser(user);
             rep.Save();
         }
-        //[Fact]
-        //public void CreateUser()
-        //{
-        //    User user = new User() { FirstName = "Владимир", LastName = "Каськов", Email = "cpux86@mail.ru", Phone = "+79997961175" };
+        [Fact]
+        public void CreateUser()
+        {
+            User user = new User() { FirstName = "Владимир", LastName = "Каськов", Email = "cpux86@mail.ru", Phone = "+79997961175" };
 
-        //}
+        }
     }
 }
