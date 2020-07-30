@@ -13,7 +13,7 @@ namespace Dmd.Domain.Modeles
         public DbSet<Properties> Properties { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Order> Order { get; set; }
-        public DbSet<Category> Catalogs { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         //public ApplicationContext(DbContextOptions<ApplicationContext> options)
         //    : base(options)
