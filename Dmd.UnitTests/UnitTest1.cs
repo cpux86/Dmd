@@ -1,6 +1,7 @@
 using Dmd.Domain.Modeles.Entityes;
 using Dmd.Domain.Repository;
 using System;
+using System.Linq;
 using Xunit;
 using Xunit.Sdk;
 
@@ -48,13 +49,17 @@ namespace Dmd.UnitTests
             productRepository.AddProduct(product);
         }
         /// <summary>
-        /// добавить вложенную категорию
+        /// получить категории - сестра
         /// </summary>
         [Fact]
-        public void AddItemCategoryTest()
+        public void GetSisterCategries()
         {
             CategoryRepository categoryRepository = new CategoryRepository();
-            categoryRepository.CreateChildsCategory();
+            var collection = categoryRepository.GetChildCategories(1);
+            foreach (var item in collection)
+            {
+
+            }
         }
     }
 }

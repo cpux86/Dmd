@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dmd.Domain.Modeles.Entityes;
+using Microsoft.Extensions.Logging;
 
 namespace Dmd.Domain.Modeles
 {

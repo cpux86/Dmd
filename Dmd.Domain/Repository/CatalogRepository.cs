@@ -54,6 +54,17 @@ namespace Dmd.Domain.Repository
         {
             return _db.Category.Where(c => c.Id == id).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Получить дочернии категории
+        /// </summary>
+        /// <param name="categoryId">идентификатор категории</param>
+        /// <returns></returns>
+        public IEnumerable<Category> GetChildCategories(int categoryId)
+        {
+            return _db.Category.Where<Category>(c=>c.ParentId == categoryId);
+        }
+
         /// <summary>
         /// Получить категорию по имени
         /// </summary>
@@ -72,10 +83,16 @@ namespace Dmd.Domain.Repository
 
         }
         /// <summary>
-        /// Переместить категорию
+        /// Перемещения категории
         /// </summary>
-        public void Move()
+        public void Move(int sourceId, int destId)
         {
+            /* Категория может ссылаться на любую категорию кроме дочерних
+             * Поиск возможных вариантов перемещения
+             * Перенос возможен:
+             * 1. в категории одного уровня (брат, сестра), и их подкатегории, кроме себя.
+             * 2. в категорию верхнего уровня
+             */
             
         }
         #endregion
@@ -89,23 +106,6 @@ namespace Dmd.Domain.Repository
 
         }
         #endregion
-
-        /// <summary>
-        /// Создать вложенную категорию
-        /// </summary>
-        /// <param name="source">категория которую нужно переместиь</param>
-        /// <param name="dest">куда нужно переместиь</param>
-        public void CreateChildsCategory(/*Category source, Category dest*/)
-        {
-            Category sub1 = new Category() { Title = "SubCat1" };
-            Category sub2 = new Category() { Title = "SubCat2" };
-            Category cat = _db.Category.Where(c => c.Id == 1).FirstOrDefault();
-            cat.ChildsCategory.Add(sub1);
-            //cat.ChildsCategory.Add(sub2);
-            _db.SaveChanges();
-                
-            
-        }
 
     }
 }
