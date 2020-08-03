@@ -1,13 +1,14 @@
 using Dmd.Domain.Modeles.Entityes;
 using Dmd.Domain.Repository;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using Xunit.Sdk;
 
 namespace Dmd.UnitTests
 {
-    public class UnitUser
+    public class CategoryRepositoryTest
     {
         [Fact]
         public void AddUser()
@@ -29,9 +30,9 @@ namespace Dmd.UnitTests
         [Fact]
         public void CreateCategory()
         {
-            Category catalog = new Category() { Title = "Категория 1" };
+            Category catalog = new Category() { Title = "КАтегория 2", ParentId = 1 };
             CategoryRepository rep = new CategoryRepository();
-            rep.Create(catalog);
+            rep.Add(catalog);
         }
         [Fact]
         public void CreateProduct()
@@ -52,13 +53,44 @@ namespace Dmd.UnitTests
         /// получить категории - сестра
         /// </summary>
         [Fact]
-        public void GetSisterCategries()
+        public void GetCategoryListTest()
         {
             CategoryRepository categoryRepository = new CategoryRepository();
-            var collection = categoryRepository.GetChildCategories(1);
+            var collection = categoryRepository.GetCategoryList(1).OrderByDescending(c => c.Sort).Select(c => c.Title);
+
+
             foreach (var item in collection)
             {
+                var i = item;
+            }
+        }
+        /// <summary>
+        /// Добавить категорию
+        /// </summary>
+        [Fact]
+        public void AddToCategoryTest()
+        {
+            Category category = new Category() { Title = "Новая категория 2" };
+            CategoryRepository categoryRepository = new CategoryRepository();
+            categoryRepository.AddToCategory(2, category);
 
+        }
+        [Fact]
+        public void ExistsTest()
+        {
+            CategoryRepository categoryRepository = new CategoryRepository();
+            bool exists = categoryRepository.Exists(2);
+
+
+        }
+        [Fact]
+        public void GetPreViewResultTest()
+        {
+            CategoryRepository categoryRepository = new CategoryRepository();
+            var collection = categoryRepository.GetPreViewResult("кат");
+            foreach (var item in collection)
+            {
+                var res = item.Title;
             }
         }
     }

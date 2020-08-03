@@ -22,6 +22,10 @@ namespace Dmd.Domain.Modeles.Entityes
         /// </summary>
         public string ImageName { get; set; }
         /// <summary>
+        /// Описание категории
+        /// </summary>
+        public string Description { get; set; }
+        /// <summary>
         /// Порядок сортировки
         /// </summary>
         public int Sort { get; set; }

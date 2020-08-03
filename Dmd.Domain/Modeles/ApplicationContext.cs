@@ -36,6 +36,10 @@ namespace Dmd.Domain.Modeles
             optionsBuilder.UseSqlite("Filename=Mobile.db");
         }
 
-
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseMySql(
+        //        @"Server = localhost; Database = ef; User = root; Password = ;");
+        //}
     }
 }
