@@ -21,20 +21,9 @@ namespace Dmd.Domain.Repository
         /// Создать категорию
         /// </summary>
         /// <param name="category"></param>
-        public void Add(Category category)
+        public void Create(Category category)
         {
             _db.Add(category);
-            _db.SaveChanges();
-        }
-        /// <summary>
-        /// Добавить в категрию
-        /// </summary>
-        /// <param name="id">идентификатор категории</param>
-        /// <param name="category">категория для добовления</param>
-        public void AddToCategory(int id, Category category)
-        {
-            category.ParentId = id;
-            _db.Category.Add(category);
             _db.SaveChanges();
         }
         /// <summary>
@@ -52,7 +41,7 @@ namespace Dmd.Domain.Repository
         /// Получить весь список категорий
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Category> GetCategoryList()
+        public IEnumerable<Category> GetCatalogList()
         {
             return _db.Category;
         }
@@ -67,13 +56,13 @@ namespace Dmd.Domain.Repository
         }
 
         /// <summary>
-        /// Получить содержимое категории
+        /// Получить дочернии категории
         /// </summary>
         /// <param name="categoryId">идентификатор категории</param>
         /// <returns></returns>
-        public IQueryable<Category> GetCategoryList(int categoryId)
+        public IEnumerable<Category> GetChildCategories(int categoryId)
         {
-            return _db.Category.Where<Category>(c => c.ParentId == categoryId);
+            return _db.Category.Where<Category>(c=>c.ParentId == categoryId);
         }
 
         /// <summary>
@@ -84,25 +73,6 @@ namespace Dmd.Domain.Repository
         {
             return _db.Category.FirstOrDefault(c => c.Id == 1);
         }
-        /// <summary>
-        /// Определяет, сществует заданная категория
-        /// </summary>
-        /// <param name="id">идентификатор проверяемой категории</param>
-        /// <returns></returns>
-        public bool Exists(int id)
-        {
-            return _db.Category.Any(c => c.Id == id);
-        }
-        /// <summary>
-        /// Определяе, существует категория с заданным именем
-        /// </summary>
-        /// <param name="catName">имя проверяемой категории</param>
-        /// <returns></returns>
-        public bool ExistsCategoryName(string catName)
-        {
-            return _db.Category.Any(c => c.Title == catName);
-        }
-
         #endregion
         #region UPDATE
         /// <summary>
@@ -136,13 +106,6 @@ namespace Dmd.Domain.Repository
 
         }
         #endregion
-        #region Helper
-        public IEnumerable<Category> GetPreViewResult(string searchStr)
-        {
-            //return _db.Category.Where(c => c.Title.ToLower().Contains(searchStr.ToLower()));
-            return _db.Category.Where<Category>(c=>EF.Functions.Like(c.Title.ToUpper(), $"%{searchStr.ToLower()}%"));
-            //return _db.Category.Where<Category>(c => EF.Functions.FreeText(c.Title, searchStr));
-        }
-        #endregion
+
     }
 }
