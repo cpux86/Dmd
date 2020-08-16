@@ -30,11 +30,11 @@ namespace Dmd.Domain.Repository
         /// Добавить в категрию
         /// </summary>
         /// <param name="id">идентификатор категории</param>
-        /// <param name="category">категория для добовления</param>
-        public void AddToCategory(int id, Category category)
+        /// <param name="cat">категория для добовления</param>
+        public void AddToCategory(string name, Category cat)
         {
-            category.ParentId = id;
-            _db.Category.Add(category);
+            Category item = _db.Category.FirstOrDefault(c=>c.Title == name);
+            item.Children.Add(cat);
             _db.SaveChanges();
         }
         /// <summary>
@@ -102,6 +102,11 @@ namespace Dmd.Domain.Repository
         {
             return _db.Category.Any(c => c.Title == catName);
         }
+        /// Получить длинну 
+        public int GetCount()
+        {
+            return _db.Category.Count<Category>();
+        }
 
         #endregion
         #region UPDATE
@@ -128,12 +133,15 @@ namespace Dmd.Domain.Repository
         #endregion
         #region DELETE
         /// <summary>
-        /// Удалить категорию
+        /// Удалить категорию по id
         /// </summary>
-        /// <param name="category"></param>
-        public void Delete(Category category)
+        /// <param name="id"></param>
+        public void Delete(string name)
         {
-
+            Category category = _db.Category.Include(c => c.Children).FirstOrDefault();
+            _db.Category.Remove(category);
+            
+            _db.SaveChanges();
         }
         #endregion
         #region Helper

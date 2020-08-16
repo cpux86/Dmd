@@ -22,7 +22,7 @@ namespace Dmd.Domain.Modeles.Entityes
         /// </summary>
         public List<Properties> Properties { get; set; }
 
-        public int? CatalogId { get; set; }
+        public int CatalogId { get; set; }
         /// <summary>
         /// Каталог к которому принадлежить данный товар или услуга
         /// </summary>

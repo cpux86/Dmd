@@ -1,5 +1,6 @@
 ﻿using Dmd.Domain.Modeles;
 using Dmd.Domain.Modeles.Entityes;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,23 @@ namespace Dmd.Domain.Repository
         {
             this._db = new ApplicationContext();
         }
-
-        public void AddProduct(Product product)
+        /// <summary>
+        /// Добавить продукты в категорию по id
+        /// </summary>
+        /// <param name="product"></param>
+        /// <param name="categoryId"></param>
+        public void AddProduct(List<Product> product, string name)
         {
-            _db.Add(product);
-            _db.SaveChangesAsync();
+            Category cat = _db.Category.FirstOrDefault(c => c.Title == name);
+            cat.Products.AddRange(product);
+            _db.SaveChanges();
+        }
+
+        public void Remove(string name)
+        {
+            Category cat = _db.Category.Include(p => p.Products).FirstOrDefault();
+            _db.Category.Remove(cat);
+            _db.SaveChanges();
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Dmd.Domain.Modeles.Entityes
 {
-    public class Customer : User
+    public class Customer
     {
         public int Id { get; set; }
         /// <summary>

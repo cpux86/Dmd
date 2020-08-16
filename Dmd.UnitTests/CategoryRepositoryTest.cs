@@ -30,25 +30,11 @@ namespace Dmd.UnitTests
         [Fact]
         public void CreateCategory()
         {
-            Category catalog = new Category() { Title = "КАтегория 2", ParentId = 1 };
+            Category catalog = new Category() { Title = "Фрукты"};
             CategoryRepository rep = new CategoryRepository();
             rep.Add(catalog);
         }
-        [Fact]
-        public void CreateProduct()
-        {
-            CategoryRepository catalogRepository = new CategoryRepository();
-            //Catalog catalog = catalogRepository.GetCatalogByName("Ноутбук");
-            Category catalog = new Category() { Title = "Компьютерная техника" };
-            
-            Product product = new Product() { 
-                Title = "Ноутбук",
-                Description = "Ультратонкий ноутбук с мощьным процессором и более 12 часов работы от батареи",
-                Catalog = catalog
-            };
-            ProductRepository productRepository = new ProductRepository();
-            productRepository.AddProduct(product);
-        }
+       
         /// <summary>
         /// получить категории - сестра
         /// </summary>
@@ -65,14 +51,14 @@ namespace Dmd.UnitTests
             }
         }
         /// <summary>
-        /// Добавить категорию
+        /// Добавить категорию в категорию
         /// </summary>
         [Fact]
         public void AddToCategoryTest()
         {
-            Category category = new Category() { Title = "Новая категория 2" };
+            Category category = new Category() { Title = "Подкатегория" };
             CategoryRepository categoryRepository = new CategoryRepository();
-            categoryRepository.AddToCategory(2, category);
+            categoryRepository.AddToCategory("Категория 1", category);
 
         }
         [Fact]
@@ -92,6 +78,19 @@ namespace Dmd.UnitTests
             {
                 var res = item.Title;
             }
+        }
+
+        [Fact]
+        public void GetCountTest()
+        {
+            CategoryRepository categoryRepository = new CategoryRepository();
+            int count = categoryRepository.GetCount();
+        }
+        [Fact]
+        public void DeleteByName()
+        {
+            CategoryRepository categoryRepository = new CategoryRepository();
+            categoryRepository.Delete("Категория 1");
         }
     }
 }
