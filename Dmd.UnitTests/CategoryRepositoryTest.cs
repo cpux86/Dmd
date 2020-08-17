@@ -78,5 +78,11 @@ namespace Dmd.UnitTests
             CategoryRepository categoryRepository = new CategoryRepository();
             categoryRepository.Delete("Категория 1");
         }
+        [Fact]
+        public void GetCategoryByIdTest()
+        {
+            CategoryRepository categoryRepository = new CategoryRepository();
+            categoryRepository.GetCategoryById(1);
+        }
     }
 }

@@ -59,7 +59,7 @@ namespace Dmd.Domain.Repository
         /// <summary>
         /// Получить категорию по id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">идентификатор зарашиваемой категории</param>
         /// <returns></returns>
         public Category GetCategoryById(int id)
         {

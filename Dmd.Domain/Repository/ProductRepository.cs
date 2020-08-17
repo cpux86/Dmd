@@ -15,37 +15,26 @@ namespace Dmd.Domain.Repository
         {
             this._db = new ApplicationContext();
         }
+        #region CREATE
         /// <summary>
         /// Добавить продукты в категорию по id
         /// </summary>
         /// <param name="product"></param>
-        /// <param name="categoryId"></param>
-        public void AddProduct(List<Product> product, string name)
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool AddProduct(List<Product> product, string name)
         {
             Category cat = _db.Category.FirstOrDefault(c => c.Title == name);
-            cat.Products.AddRange(product);
-            _db.SaveChanges();
+            if (cat != null)
+            {
+                cat.Products.AddRange(product);
+                _db.SaveChanges();
+                return true;
+            }
+            return false;
         }
-        /// <summary>
-        /// Удалить категорию по имени
-        /// </summary>
-        /// <param name="name"></param>
-        public void Remove(string name)
-        {
-            Category cat = _db.Category.Include(p => p.Products).FirstOrDefault();
-            _db.Category.Remove(cat);
-            _db.SaveChanges();
-        }
-
-        /// <summary>
-        /// Вернуть все товары из БД
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<Product> GetProductList()
-        {
-            return _db.Product.ToList();
-        }
-
+        #endregion
+        #region READ
         /// <summary>
         /// Получить содержимое категории
         /// </summary>
@@ -56,6 +45,35 @@ namespace Dmd.Domain.Repository
             Category item = _db.Category.Include(p => p.Products).First(c => c.Id == categoryId);
             return item.Products.ToList();
         }
+        #endregion
+        #region UPDATE
+
+        #endregion
+        #region DELETE
+        /// <summary>
+        /// Удалить категорию по имени
+        /// </summary>
+        /// <param name="name"></param>
+        public void Remove(string name)
+        {
+            Category cat = _db.Category.Include(p => p.Products).FirstOrDefault();
+            _db.Category.Remove(cat);
+            _db.SaveChanges();
+        }
+        #endregion
+
+
+
+        /// <summary>
+        /// Вернуть все товары из БД
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Product> GetProductList()
+        {
+            return _db.Product.ToList();
+        }
+
+        
         ///// <summary>
         ///// Вернуть все товары пользователя
         ///// </summary>
