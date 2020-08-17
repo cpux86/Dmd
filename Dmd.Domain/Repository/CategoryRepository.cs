@@ -66,15 +66,7 @@ namespace Dmd.Domain.Repository
             return _db.Category.Where(c => c.Id == id).FirstOrDefault();
         }
 
-        /// <summary>
-        /// Получить содержимое категории
-        /// </summary>
-        /// <param name="categoryId">идентификатор категории</param>
-        /// <returns></returns>
-        public IQueryable<Category> GetCategoryList(int categoryId)
-        {
-            return _db.Category.Where<Category>(c => c.ParentId == categoryId);
-        }
+
 
         /// <summary>
         /// Получить категорию по имени

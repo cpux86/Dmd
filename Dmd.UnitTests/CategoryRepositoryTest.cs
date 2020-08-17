@@ -35,21 +35,7 @@ namespace Dmd.UnitTests
             rep.Add(catalog);
         }
        
-        /// <summary>
-        /// получить категории - сестра
-        /// </summary>
-        [Fact]
-        public void GetCategoryListTest()
-        {
-            CategoryRepository categoryRepository = new CategoryRepository();
-            var collection = categoryRepository.GetCategoryList(1).OrderByDescending(c => c.Sort).Select(c => c.Title);
 
-
-            foreach (var item in collection)
-            {
-                var i = item;
-            }
-        }
         /// <summary>
         /// Добавить категорию в категорию
         /// </summary>

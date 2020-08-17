@@ -32,5 +32,20 @@ namespace Dmd.UnitTests
             ProductRepository productRepository = new ProductRepository();
             productRepository.Remove("Бананы");
         }
+        [Fact]
+        public void GetProductListTest()
+        {
+            ProductRepository productRepository = new ProductRepository();
+            var productList = productRepository.GetProductList();
+        }
+        /// <summary>
+        /// получить содержимое категории
+        /// </summary>
+        [Fact]
+        public void GetCategoryListTest()
+        {
+            ProductRepository productRepository = new ProductRepository();
+            var list = productRepository.GetCategoryList(2);
+        }
     }
 }

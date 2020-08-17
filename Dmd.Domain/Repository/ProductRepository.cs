@@ -26,7 +26,10 @@ namespace Dmd.Domain.Repository
             cat.Products.AddRange(product);
             _db.SaveChanges();
         }
-
+        /// <summary>
+        /// Удалить категорию по имени
+        /// </summary>
+        /// <param name="name"></param>
         public void Remove(string name)
         {
             Category cat = _db.Category.Include(p => p.Products).FirstOrDefault();
@@ -40,7 +43,18 @@ namespace Dmd.Domain.Repository
         /// <returns></returns>
         public IEnumerable<Product> GetProductList()
         {
-            return _db.Product;
+            return _db.Product.ToList();
+        }
+
+        /// <summary>
+        /// Получить содержимое категории
+        /// </summary>
+        /// <param name="categoryId">идентификатор категории</param>
+        /// <returns></returns>
+        public ICollection<Product> GetCategoryList(int categoryId)
+        {
+            Category item = _db.Category.Include(p => p.Products).First(c => c.Id == categoryId);
+            return item.Products.ToList();
         }
         ///// <summary>
         ///// Вернуть все товары пользователя
