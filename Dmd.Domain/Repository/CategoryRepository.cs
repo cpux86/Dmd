@@ -128,12 +128,16 @@ namespace Dmd.Domain.Repository
         /// Удалить категорию по id
         /// </summary>
         /// <param name="id"></param>
-        public void Delete(string name)
+        public void DeleteCategoryById(int id)
         {
-            Category category = _db.Category.Include(c => c.Children).FirstOrDefault();
-            _db.Category.Remove(category);
-            
-            _db.SaveChanges();
+            Category category = _db.Category.Include(c => c.Children).FirstOrDefault(c => c.Id == id);
+            if (category != null)
+            {
+                _db.Category.Remove(category);
+
+                _db.SaveChanges();
+            }
+
         }
         #endregion
         #region Helper

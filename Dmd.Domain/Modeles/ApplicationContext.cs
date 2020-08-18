@@ -31,15 +31,15 @@ namespace Dmd.Domain.Modeles
         //    optionsBuilder.UseSqlServer(
         //        @"Server=(localdb)\MSSQLLocaldb;Database=Blogging;Integrated Security=True");
         //}
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("Filename=Mobile.db");
-        //}
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(
-                @"Server = localhost; Database = ef; User = root; Password = ;");
+            optionsBuilder.UseSqlite("Filename=Mobile.db");
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseMySql(
+        //        @"Server = localhost; Database = ef; User = root; Password = ;");
+        //}
     }
 }

@@ -40,7 +40,7 @@ namespace Dmd.Domain.Repository
         /// </summary>
         /// <param name="categoryId">идентификатор категории</param>
         /// <returns></returns>
-        public ICollection<Product> GetCategoryList(int categoryId)
+        public ICollection<Product> GetProductsList(int categoryId)
         {
             Category item = _db.Category.Include(p => p.Products).First(c => c.Id == categoryId);
             return item.Products.ToList();
@@ -64,14 +64,14 @@ namespace Dmd.Domain.Repository
 
 
 
-        /// <summary>
-        /// Вернуть все товары из БД
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<Product> GetProductList()
-        {
-            return _db.Product.ToList();
-        }
+        ///// <summary>
+        ///// Вернуть все товары из БД
+        ///// </summary>
+        ///// <returns></returns>
+        //public IEnumerable<Product> GetProductList()
+        //{
+        //    return _db.Product.ToList();
+        //}
 
         
         ///// <summary>

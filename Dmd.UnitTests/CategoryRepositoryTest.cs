@@ -73,10 +73,10 @@ namespace Dmd.UnitTests
             int count = categoryRepository.GetCount();
         }
         [Fact]
-        public void DeleteByName()
+        public void DeleteCategoryByIdTest()
         {
             CategoryRepository categoryRepository = new CategoryRepository();
-            categoryRepository.Delete("Категория 1");
+            categoryRepository.DeleteCategoryById(5);
         }
         [Fact]
         public void GetCategoryByIdTest()
