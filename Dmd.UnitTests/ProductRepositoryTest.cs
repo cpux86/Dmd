@@ -11,7 +11,7 @@ namespace Dmd.UnitTests
     public class ProductRepositoryTest
     {
         [Fact]
-        public void AddProductTest()
+        public void AddProductToCategoryTest()
         {
             ProductRepository productRepository = new ProductRepository();
             List<Product> products = new List<Product>()
@@ -21,9 +21,7 @@ namespace Dmd.UnitTests
                 new Product {Title ="Бананы"},
                 new Product {Title ="Мандарины"}
             };
-            //Product product = new Product();
-            //product.Title = "Яблоки";
-            productRepository.AddProduct(products, "Фрукты");
+            var result = productRepository.AddProductToCategory(products, 4);
         }
 
         [Fact]
@@ -36,10 +34,32 @@ namespace Dmd.UnitTests
         /// получить содержимое категории
         /// </summary>
         [Fact]
-        public void GetProductsListTest()
+        public void GetProductsByCategoryTest()
         {
             ProductRepository productRepository = new ProductRepository();
-            var productList = productRepository.GetProductsList(1);
+            var result = productRepository.GetProductsByCategoryId(4);
+        }
+        /// <summary>
+        /// получить диапазон продуктов из категории
+        /// </summary>
+        [Fact]
+        public void GetProductsRangeTest()
+        {
+            ProductRepository productRepository = new ProductRepository();
+            Category category = productRepository.GetProductsByCategoryId(2);
+            IEnumerable<Product> products;
+            if (category != null)
+            {
+                products = productRepository.GetProductsRange(category,5,5);
+            }
+        }
+        // Кличестово продуктов в категории
+        [Fact]
+        public void ProductCounterTest()
+        {
+            ProductRepository productRepository = new ProductRepository();
+            Category category = productRepository.GetProductsByCategoryId(2);
+            int count = productRepository.ProductCounter(category);
         }
     }
 }

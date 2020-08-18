@@ -67,15 +67,6 @@ namespace Dmd.Domain.Repository
         }
 
 
-
-        /// <summary>
-        /// Получить категорию по имени
-        /// </summary>
-        /// <returns></returns>
-        public Category GetCategoryByName(string catalog)
-        {
-            return _db.Category.FirstOrDefault(c => c.Id == 1);
-        }
         /// <summary>
         /// Определяет, сществует заданная категория
         /// </summary>

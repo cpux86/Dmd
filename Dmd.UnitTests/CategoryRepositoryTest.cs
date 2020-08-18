@@ -76,13 +76,13 @@ namespace Dmd.UnitTests
         public void DeleteCategoryByIdTest()
         {
             CategoryRepository categoryRepository = new CategoryRepository();
-            categoryRepository.DeleteCategoryById(5);
+            categoryRepository.DeleteCategoryById(2);
         }
         [Fact]
         public void GetCategoryByIdTest()
         {
             CategoryRepository categoryRepository = new CategoryRepository();
-            categoryRepository.GetCategoryById(1);
+            var result = categoryRepository.GetCategoryById(1);
         }
     }
 }

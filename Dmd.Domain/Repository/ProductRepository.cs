@@ -20,11 +20,11 @@ namespace Dmd.Domain.Repository
         /// Добавить продукты в категорию по id
         /// </summary>
         /// <param name="product"></param>
-        /// <param name="name"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        public bool AddProduct(List<Product> product, string name)
+        public bool AddProductToCategory(List<Product> product, int id)
         {
-            Category cat = _db.Category.FirstOrDefault(c => c.Title == name);
+            Category cat = _db.Category.FirstOrDefault(c => c.Id == id);
             if (cat != null)
             {
                 cat.Products.AddRange(product);
@@ -36,15 +36,54 @@ namespace Dmd.Domain.Repository
         #endregion
         #region READ
         /// <summary>
-        /// Получить содержимое категории
+        /// Получить продукты по id категории
         /// </summary>
-        /// <param name="categoryId">идентификатор категории</param>
+        /// <param name="Id">идентификатор категории</param>
         /// <returns></returns>
-        public ICollection<Product> GetProductsList(int categoryId)
+        public Category GetProductsByCategoryId(int Id)
         {
-            Category item = _db.Category.Include(p => p.Products).First(c => c.Id == categoryId);
-            return item.Products.ToList();
+            return _db.Category.Include(p => p.Products).FirstOrDefault(c => c.Id == Id);
         }
+
+        /// <summary>
+        /// Получить весе элементы (продуктовы), из источника (категории)
+        /// </summary>
+        /// <param name="dataSource">Объкт категории источника</param>
+        /// <returns></returns>
+        public IEnumerable<Product> GetProductsAll(Category dataSource)
+        {
+            return dataSource.Products.ToList();
+        }
+        /// <summary>
+        /// Получить диапазон элементов (продуктов) из источника (категории)
+        /// </summary>
+        /// <param name="dataSource">Объкт категории источника</param>
+        /// <param name="start">номер старотовой позиции элемента в источнике</param>
+        /// <param name="count">количество запрашиваетмых элеменов</param>
+        /// <returns></returns>
+        public IEnumerable<Product> GetProductsRange(Category dataSource, int start, int count)
+        {
+            return dataSource.Products.Skip(start - 1).Take(count).ToList();
+        }
+        /// <summary>
+        /// Получить весь диапазон элементов (продуктов), начиная со start, из источника (категории)
+        /// </summary>
+        /// <param name="dataSource">Объкт категории источника</param>
+        /// <param name="start">номер старотовой позиции элемента в источнике</param>
+        /// <returns></returns>
+        public IEnumerable<Product> GetProductsRange(Category dataSource, int start)
+        {
+            return dataSource.Products.Skip(start - 1).ToList();
+        }
+        /// <summary>
+        /// Возвращает количество элементов (товаров) в источнике (категории)
+        /// </summary>
+        /// <param name="dataSource">Объект источника данных (категория)</param>
+        /// <returns></returns>
+        public int ProductCounter(Category dataSource) {
+            return dataSource.Products.Count;
+        }
+
         #endregion
         #region UPDATE
 
@@ -56,7 +95,7 @@ namespace Dmd.Domain.Repository
         /// <param name="name"></param>
         public void Remove(string name)
         {
-            Category cat = _db.Category.Include(p => p.Products).FirstOrDefault();
+            //Category cat = _db.Category.Include(c => c.Products).FirstOrDefault(p => p.Title == name);
             _db.Category.Remove(cat);
             _db.SaveChanges();
         }
