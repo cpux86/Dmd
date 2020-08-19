@@ -10,25 +10,11 @@ namespace Dmd.UnitTests
 {
     public class CategoryRepositoryTest
     {
-        [Fact]
-        public void AddUser()
-        {
-            User user = new User() { /*FirstName = "Владимир",*/ LastName = "Каськов", Email = "cpux86@mail.ru", Phone = "+79997961175" };
-            UserRepository rep = new UserRepository();
-            rep.CreateUser(user);
-            rep.Save();
-        }
-        [Fact]
-        public void CreateUser()
-        {
-            User user = new User() { FirstName = "Владимир", LastName = "Каськов", Email = "cpux86@mail.ru", Phone = "+79997961175" };
-
-        }
         /// <summary>
         /// Создать новую категорию
         /// </summary>
         [Fact]
-        public void CreateCategory()
+        public void CreateTest()
         {
             Category catalog = new Category() { Title = "Фрукты"};
             CategoryRepository rep = new CategoryRepository();
@@ -76,7 +62,7 @@ namespace Dmd.UnitTests
         public void DeleteCategoryByIdTest()
         {
             CategoryRepository categoryRepository = new CategoryRepository();
-            categoryRepository.DeleteCategoryById(2);
+            categoryRepository.DeleteCategoryById(1);
         }
         [Fact]
         public void GetCategoryByIdTest()

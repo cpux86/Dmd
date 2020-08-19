@@ -21,14 +21,14 @@ namespace Dmd.UnitTests
                 new Product {Title ="Бананы"},
                 new Product {Title ="Мандарины"}
             };
-            var result = productRepository.AddProductToCategory(products, 4);
+            var result = productRepository.AddProductToCategory(products, 2);
         }
 
         [Fact]
-        public void RemoveProductTest()
+        public void RemoveProduct()
         {
             ProductRepository productRepository = new ProductRepository();
-            productRepository.Remove("Бананы");
+            productRepository.Remove(7);
         }
         /// <summary>
         /// получить содержимое категории

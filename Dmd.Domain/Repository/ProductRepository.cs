@@ -89,14 +89,11 @@ namespace Dmd.Domain.Repository
 
         #endregion
         #region DELETE
-        /// <summary>
-        /// Удалить категорию по имени
-        /// </summary>
-        /// <param name="name"></param>
-        public void Remove(string name)
+        
+        public void Remove(int id)
         {
-            //Category cat = _db.Category.Include(c => c.Products).FirstOrDefault(p => p.Title == name);
-            _db.Category.Remove(cat);
+            Product product = _db.Product.FirstOrDefault(p=>p.Id == id);
+            _db.Remove(product);
             _db.SaveChanges();
         }
         #endregion
@@ -112,7 +109,7 @@ namespace Dmd.Domain.Repository
         //    return _db.Product.ToList();
         //}
 
-        
+
         ///// <summary>
         ///// Вернуть все товары пользователя
         ///// </summary>
