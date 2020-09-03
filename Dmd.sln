@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain", "Dmd.Domain\Dmd.Domain.csproj", "{7EA1CECB-AB82-41CC-855A-39425032779E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Api", "Dmd.Api\Dmd.Api.csproj", "{26ABB07E-D8FC-4593-BED3-7C1CCDFD3B64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain.Core", "Dmd.Domain\Dmd.Domain.Core.csproj", "{7EA1CECB-AB82-41CC-855A-39425032779E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.UnitTests", "Dmd.UnitTests\Dmd.UnitTests.csproj", "{E3A213C2-3284-4977-A0DF-FB5320E046B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{89F5D2F8-5333-4EEB-8216-2E344FCD599A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E01FC33C-33DA-4275-8796-E32C053040FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{68388F90-FD50-4DD1-9264-16B1E3D345CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Domain.Interfaces", "Dmd.Domain.Interfaces\Dmd.Domain.Interfaces.csproj", "{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Infrastructure.Data", "Dmd.Infrastructure.Data\Dmd.Infrastructure.Data.csproj", "{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +29,6 @@ Global
 		{7EA1CECB-AB82-41CC-855A-39425032779E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EA1CECB-AB82-41CC-855A-39425032779E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EA1CECB-AB82-41CC-855A-39425032779E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26ABB07E-D8FC-4593-BED3-7C1CCDFD3B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26ABB07E-D8FC-4593-BED3-7C1CCDFD3B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26ABB07E-D8FC-4593-BED3-7C1CCDFD3B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26ABB07E-D8FC-4593-BED3-7C1CCDFD3B64}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,9 +37,22 @@ Global
 		{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EA1CECB-AB82-41CC-855A-39425032779E} = {89F5D2F8-5333-4EEB-8216-2E344FCD599A}
+		{C12241D6-C3E9-4546-BE1E-641CA30D3EFA} = {89F5D2F8-5333-4EEB-8216-2E344FCD599A}
+		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76} = {68388F90-FD50-4DD1-9264-16B1E3D345CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB007E5B-BC5A-439C-87BD-639E623DE0A7}
