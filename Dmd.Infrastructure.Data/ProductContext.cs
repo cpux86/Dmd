@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Dmd.Domain.Modeles.Entityes;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Dmd.Infrastructure.Data
 {
-    class ProductContext
+    class ProductContext : DbContext
     {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
