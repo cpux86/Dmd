@@ -8,5 +8,6 @@ namespace Dmd.Domain.Interfaces
     public interface IProductRepository
     {
         bool Add(Product product, int id);
+        string GetAll();
     }
 }

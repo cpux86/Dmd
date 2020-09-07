@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Dmd.Infrastructure.Data
 {
-    class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly ProductContext db;
         public ProductRepository()
@@ -25,6 +25,11 @@ namespace Dmd.Infrastructure.Data
                 return true;
             }
             return true;
+        }
+
+        public string GetAll()
+        {
+            return "Hello World";
         }
     }
 }

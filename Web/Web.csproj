@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dmd.Domain.Interfaces\Dmd.Domain.Interfaces.csproj" />
     <ProjectReference Include="..\Dmd.Domain\Dmd.Domain.Core.csproj" />
+    <ProjectReference Include="..\Dmd.Infrastructure.Data\Dmd.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

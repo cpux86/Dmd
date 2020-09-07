@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Dmd.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.Models;
@@ -12,15 +13,17 @@ namespace Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        IProductRepository product;
+        public HomeController(ILogger<HomeController> logger, IProductRepository p)
         {
             _logger = logger;
+            this.product = p;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var hello = product.GetAll();
+            return View(hello);
         }
 
         public IActionResult Privacy()

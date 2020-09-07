@@ -8,10 +8,10 @@ using System.Text;
 
 namespace Dmd.Domain.Repository
 {
-    public class ProductRepository
+    public class ProductRepository1
     {
         private readonly ApplicationContext _db;
-        public ProductRepository()
+        public ProductRepository1()
         {
             this._db = new ApplicationContext();
         }
