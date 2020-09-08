@@ -15,9 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{68388F90-FD50-4DD1-9264-16B1E3D345CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Domain.Interfaces", "Dmd.Domain.Interfaces\Dmd.Domain.Interfaces.csproj", "{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain.Interfaces", "Dmd.Domain.Interfaces\Dmd.Domain.Interfaces.csproj", "{C12241D6-C3E9-4546-BE1E-641CA30D3EFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Infrastructure.Data", "Dmd.Infrastructure.Data\Dmd.Infrastructure.Data.csproj", "{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Infrastructure.Data", "Dmd.Infrastructure.Data\Dmd.Infrastructure.Data.csproj", "{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Services.Interfaces", "Dmd.Services.Interfaces\Dmd.Services.Interfaces.csproj", "{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Infrastructure.Business", "Dmd.Infrastructure.Business\Dmd.Infrastructure.Business.csproj", "{DE035058-D418-4787-9081-F2DCA98B1696}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE035058-D418-4787-9081-F2DCA98B1696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE035058-D418-4787-9081-F2DCA98B1696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE035058-D418-4787-9081-F2DCA98B1696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE035058-D418-4787-9081-F2DCA98B1696}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +65,8 @@ Global
 		{7EA1CECB-AB82-41CC-855A-39425032779E} = {89F5D2F8-5333-4EEB-8216-2E344FCD599A}
 		{C12241D6-C3E9-4546-BE1E-641CA30D3EFA} = {89F5D2F8-5333-4EEB-8216-2E344FCD599A}
 		{C439169F-EA9F-46CA-9EF4-9F6CB5057C76} = {68388F90-FD50-4DD1-9264-16B1E3D345CF}
+		{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67} = {E01FC33C-33DA-4275-8796-E32C053040FB}
+		{DE035058-D418-4787-9081-F2DCA98B1696} = {68388F90-FD50-4DD1-9264-16B1E3D345CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB007E5B-BC5A-439C-87BD-639E623DE0A7}
