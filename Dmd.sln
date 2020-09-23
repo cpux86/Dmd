@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain.Core", "Dmd.Domain\Dmd.Domain.Core.csproj", "{7EA1CECB-AB82-41CC-855A-39425032779E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.UnitTests", "Dmd.UnitTests\Dmd.UnitTests.csproj", "{E3A213C2-3284-4977-A0DF-FB5320E046B7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{89F5D2F8-5333-4EEB-8216-2E344FCD599A}"
@@ -19,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain.Interfaces", "Dm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Infrastructure.Data", "Dmd.Infrastructure.Data\Dmd.Infrastructure.Data.csproj", "{C439169F-EA9F-46CA-9EF4-9F6CB5057C76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Services.Interfaces", "Dmd.Services.Interfaces\Dmd.Services.Interfaces.csproj", "{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Services.Interfaces", "Dmd.Services.Interfaces\Dmd.Services.Interfaces.csproj", "{3DAB7B4C-39A5-4EC6-9EB7-368A35503E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dmd.Infrastructure.Business", "Dmd.Infrastructure.Business\Dmd.Infrastructure.Business.csproj", "{DE035058-D418-4787-9081-F2DCA98B1696}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Infrastructure.Business", "Dmd.Infrastructure.Business\Dmd.Infrastructure.Business.csproj", "{DE035058-D418-4787-9081-F2DCA98B1696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestDmd", "XUnitTestDmd\XUnitTestDmd.csproj", "{FECE2931-0CD4-4961-A133-1A31D0ECC383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{7EA1CECB-AB82-41CC-855A-39425032779E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EA1CECB-AB82-41CC-855A-39425032779E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EA1CECB-AB82-41CC-855A-39425032779E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3A213C2-3284-4977-A0DF-FB5320E046B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2C679D-F6D4-45FD-B752-2EEB999A3DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{DE035058-D418-4787-9081-F2DCA98B1696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE035058-D418-4787-9081-F2DCA98B1696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE035058-D418-4787-9081-F2DCA98B1696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECE2931-0CD4-4961-A133-1A31D0ECC383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECE2931-0CD4-4961-A133-1A31D0ECC383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECE2931-0CD4-4961-A133-1A31D0ECC383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECE2931-0CD4-4961-A133-1A31D0ECC383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

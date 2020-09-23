@@ -27,6 +27,11 @@ namespace Dmd.Infrastructure.Data
             return true;
         }
 
+        public IEnumerable<Product> Find(Func<Product, Boolean> predicate)
+        {
+            return db.Products.Where<Product>(predicate).ToList();
+        }
+
         public string GetAll()
         {
             return "Hello World";

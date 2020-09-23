@@ -23,6 +23,7 @@ namespace Web.Controllers
         public IActionResult Index()
         {
             var hello = product.GetAll();
+            var test = product.Find(p => p.Title == "Test");
             return View(hello);
         }
 

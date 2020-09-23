@@ -8,6 +8,7 @@ namespace Dmd.Domain.Interfaces
     public interface IProductRepository
     {
         bool Add(Product product, int id);
+        IEnumerable<Product> Find(Func<Product, Boolean> predicate);
         string GetAll();
     }
 }
