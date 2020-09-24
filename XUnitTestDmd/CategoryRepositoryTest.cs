@@ -13,7 +13,7 @@ namespace XUnitTestDmd
         {
             Category category = new Category { Title = "Овощи" };
             CategoryRepository repo = new CategoryRepository();
-            repo.Create(category);
+            repo.Add(category);
         }
         [Fact]
         public void Get()

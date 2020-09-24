@@ -9,10 +9,10 @@ namespace Dmd.Infrastructure.Data
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ProductContext db;
+        private readonly ApplicationContext db;
         public ProductRepository()
         {
-            this.db = new ProductContext();
+            this.db = new ApplicationContext();
         }
 
         public bool Add(Product product, int id)
