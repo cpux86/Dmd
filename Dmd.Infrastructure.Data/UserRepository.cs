@@ -1,14 +1,13 @@
-﻿using Dmd.Domain.Interface;
-using Dmd.Domain.Modeles;
-using Dmd.Domain.Modeles.Entityes;
+﻿using Dmd.Domain.Core;
+using Dmd.Domain.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dmd.Domain.Repository
+namespace Dmd.Infrastructure.Data
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository
     {
         private readonly ApplicationContext _db;
         public UserRepository()

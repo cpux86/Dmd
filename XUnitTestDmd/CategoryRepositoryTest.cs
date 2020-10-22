@@ -1,4 +1,4 @@
-using Dmd.Domain.Modeles.Entityes;
+using Dmd.Domain.Core.Entities;
 using Dmd.Infrastructure.Data;
 using System;
 using System.Linq;
@@ -16,10 +16,17 @@ namespace XUnitTestDmd
             repo.Add(category);
         }
         [Fact]
-        public void Get()
+        public void Find()
         {
             CategoryRepository repo = new CategoryRepository();
             var res = repo.Find(c => c.Title == "‘рукты" || c.Title == "ќвощи");
         }
+        [Fact]
+        public void DeleteCategoryByIdTest()
+        {
+            CategoryRepository repo = new CategoryRepository();
+            repo.DeleteCategoryById(6);
+        }
+
     }
 }

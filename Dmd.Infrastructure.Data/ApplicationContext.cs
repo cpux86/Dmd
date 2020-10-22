@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using Dmd.Domain.Modeles.Entityes;
+using Dmd.Domain.Core.Entities;
 
 namespace Dmd.Infrastructure.Data
 {
@@ -23,15 +23,15 @@ namespace Dmd.Infrastructure.Data
             Database.EnsureCreated();
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(
-        //        @"Server=(localdb)\MSSQLLocaldb;Database=Blogging;Integrated Security=True");
-        //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Mobile.db");
+            optionsBuilder.UseSqlServer(
+                @"Server=(localdb)\MSSQLLocaldb;Database=Blogging;Integrated Security=True");
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlite("Filename=Mobile.db");
+        //}
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

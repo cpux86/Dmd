@@ -1,4 +1,4 @@
-﻿using Dmd.Domain.Modeles.Entityes;
+﻿using Dmd.Domain.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

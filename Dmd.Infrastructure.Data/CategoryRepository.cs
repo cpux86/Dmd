@@ -1,5 +1,5 @@
-﻿using Dmd.Domain.Modeles;
-using Dmd.Domain.Modeles.Entityes;
+﻿using Dmd.Domain.Core;
+using Dmd.Domain.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,11 @@ namespace Dmd.Infrastructure.Data
         public CategoryRepository()
         {
             this.db = new ApplicationContext();
+        }
+
+        public IEnumerable<Category> Find(Func<Category, bool> cat)
+        {
+            return db.Categories.Where(cat).ToList();
         }
         #region CREATE
         /// <summary>

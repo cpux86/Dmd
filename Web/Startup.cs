@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 using Dmd.Domain.Interfaces;
 using Dmd.Infrastructure.Data;
-using Dmd.Domain.Modeles;
-using Dmd.Domain.Repository;
+using Dmd.Domain.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

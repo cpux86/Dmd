@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dmd.Domain.Modeles.Entityes
+namespace Dmd.Domain.Core.Entities
 {
-    public class Product
+    public class Product : BaseEntities
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         /// <summary>
         /// Описание товара или услуги

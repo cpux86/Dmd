@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dmd.Domain.Modeles.Entityes
+namespace Dmd.Domain.Core.Entities
 {
 
-    public class Order
+    public class Order : BaseEntities
     {
-        public int Id { get; set; }
         public string Number { get; set; }
         /// <summary>
         /// Содержимое заказа

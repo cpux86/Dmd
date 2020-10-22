@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace Dmd.Domain.Modeles.Entityes
+namespace Dmd.Domain.Core.Entities
 {
-    public class Category
-    {
-        public int? Id { get; set; }
-        
+    public class Category : BaseEntities
+    {        
         /// <summary>
         /// Заголовок категории
         /// </summary>

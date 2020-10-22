@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dmd.Domain.ViewModeles
+namespace XUnitTestDmd
 {
-    class RegistrationViewModele
+    class SpecificationTest
     {
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Dmd.Domain.Modeles.Entityes
+namespace Dmd.Domain.Core.Entities
 {
     public class CategoryTree
     {

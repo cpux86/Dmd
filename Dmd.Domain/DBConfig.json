@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "MSSQLConnectionString": "Server=(localdb)\\mssqllocaldb;Database=EFGetStarted.ConsoleApp.NewDb;Trusted_Connection=True;"
-  }
-}

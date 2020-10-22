@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dmd.Domain.Modeles.Entityes
+namespace Dmd.Domain.Core.Entities
 {
     public class Customer
     {

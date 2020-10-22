@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
 
-namespace Dmd.Domain.Modeles.Entityes
+namespace Dmd.Domain.Core.Entities
 {
-    public class User
+    public class User : BaseEntities
     {
         public User()
         {
@@ -18,7 +13,6 @@ namespace Dmd.Domain.Modeles.Entityes
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //public Guid Identity { get; set; }
-        public int Id { get; set; }
 
         public Guid Guid { get; set; }
 
