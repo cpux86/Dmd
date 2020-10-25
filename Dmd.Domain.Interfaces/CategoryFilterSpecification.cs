@@ -11,7 +11,7 @@ namespace Dmd.Domain.Core.Specification
     {
         public CategoryFilterSpecification(int id)
         {
-            Query.Where(c => c.Title == "kfdkf");
+            Query.Where(c => c.Id == id);
         }
     }
 }

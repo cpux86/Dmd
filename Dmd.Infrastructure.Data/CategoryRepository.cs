@@ -21,6 +21,7 @@ namespace Dmd.Infrastructure.Data
         {
             return db.Categories.Where(cat).ToList();
         }
+
         #region CREATE
         /// <summary>
         /// Создать категорию
