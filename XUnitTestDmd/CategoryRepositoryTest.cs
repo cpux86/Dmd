@@ -11,9 +11,16 @@ namespace XUnitTestDmd
         [Fact]
         public void Create()
         {
-            Category category = new Category { Title = "ќвощи" };
+            Category category = new Category { Title = "√лавное меню"};
             CategoryRepository repo = new CategoryRepository();
             repo.Add(category);
+            
+        }
+        [Fact]
+        public void GetCategoryByIdTest()
+        {
+            CategoryRepository repo = new CategoryRepository();
+            var result = repo.GetCategoryById(2);
         }
         [Fact]
         public void Find()
@@ -27,6 +34,7 @@ namespace XUnitTestDmd
             CategoryRepository repo = new CategoryRepository();
             repo.DeleteCategoryById(6);
         }
+
 
     }
 }

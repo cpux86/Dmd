@@ -10,12 +10,12 @@ namespace XUnitTestDmd
 {
     public class SpecificationTest
     {
-       [Fact]
-        public void CategoryTest1()
-        {
-            CategoryFilterSpecification spcification = new CategoryFilterSpecification(1);
-            EfRepository<Category> efRepository = new EfRepository<Category>();
-            var result = efRepository.FirstOrDefaultAsync(spcification);
-        }
+       //[Fact]
+       // public void CategoryTest1()
+       // {
+       //     CategoryFilterSpecification spcification = new CategoryFilterSpecification(1);
+       //     EfRepository<Category> efRepository = new EfRepository<Category>();
+       //     var result = efRepository.FirstOrDefaultAsync(spcification);
+       // }
     }
 }

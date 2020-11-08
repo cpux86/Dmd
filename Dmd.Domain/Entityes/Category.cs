@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace Dmd.Domain.Core.Entities
 {
+
     public class Category : BaseEntities
-    {        
+    {
+
         /// <summary>
         /// Заголовок категории
         /// </summary>
@@ -22,22 +25,17 @@ namespace Dmd.Domain.Core.Entities
         /// <summary>
         /// Порядок сортировки
         /// </summary>
-        public int Sort { get; set; }
+        public int? Sort { get; set; }
 
+        public int LeftKey { get; set; }
+        public int RightKey { get; set; }
+        public int Level { get; set; }
+        public int Parent { get; set; }
         /// <summary>
-        /// Идентификатор родительской категории
+        /// Дата модификации
         /// </summary>
-        public int? ParentId { get; set; }
-        //public Category Parent { get; set; }
-        public List<Category> Children { get; set; }
-
-        public List<Product> Products { get; set; }
-
-        public Category()
-        {
-            Children = new List<Category>();
-            Products = new List<Product>();
-        }
+        public DateTimeOffset DateModified { get; set; }
+        //public DateTime DateModified { get; set; }
     }
 
 }

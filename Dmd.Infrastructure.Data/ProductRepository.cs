@@ -20,7 +20,7 @@ namespace Dmd.Infrastructure.Data
             Category cat = db.Categories.FirstOrDefault(c=>c.Id == id);
             if (cat != null)
             {
-                cat.Products.Add(product);
+                //cat.Products.Add(product);
                 db.SaveChanges();
                 return true;
             }
