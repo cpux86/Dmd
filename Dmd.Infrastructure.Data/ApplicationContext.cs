@@ -46,7 +46,7 @@ namespace Dmd.Infrastructure.Data
         {
             //modelBuilder.Entity<Category>()
             //    .HasOne(p => p.Parent).WithMany(c => c.Children).OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, LeftKey = 1, RightKey = 2, Level = 0, Parent = 0, DateModified = DateTime.Now }) ;
+            //modelBuilder.Entity<Category>().HasData(new Category { Id = 1, LeftKey = 1, RightKey = 2, Level = 0, Parent = 0, DateModified = DateTime.Now }) ;
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

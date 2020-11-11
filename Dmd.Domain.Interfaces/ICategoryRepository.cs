@@ -5,7 +5,7 @@ namespace Dmd.Infrastructure.Data
 {
     public interface ICategoryRepository
     {
-        void Add(Category category);
+        int Add(Category category);
         void AddToCategory(string name, Category cat);
         void Copy(Category category, Category dest);
         void DeleteCategoryById(int id);
@@ -13,7 +13,7 @@ namespace Dmd.Infrastructure.Data
         bool Exists(int id);
         bool ExistsCategoryName(string catName);
         Category GetCategoryById(int id);
-        IEnumerable<Category> GetCategoryList();
+        //IEnumerable<Category> GetCategoryList();
         int GetCount();
         IEnumerable<Category> GetPreViewResult(string searchStr);
         void Move(int sourceId, int destId);
