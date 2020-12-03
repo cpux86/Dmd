@@ -30,7 +30,12 @@ namespace Dmd.Infrastructure.Data
         /// Создать категорию
         /// </summary>
         /// <param name="category"></param>
-        public void Add(IList<Category> category)
+        public void Add(Category category)
+        {
+            db.Categories.Add(category);
+            db.SaveChangesAsync();
+        }
+        public void AddRange(IList<Category> category)
         {
             db.BulkInsertAsync(category);
         }
@@ -142,6 +147,8 @@ namespace Dmd.Infrastructure.Data
            return db.Categories.Where<Category>(c => EF.Functions.Like(c.Title.ToUpper(), $"%{searchStr.ToLower()}%"));
             //return _db.Category.Where<Category>(c => EF.Functions.FreeText(c.Title, searchStr));
         }
+
+        
         #endregion
     }
 }

@@ -23,20 +23,21 @@ namespace Dmd.Api.Controllers
             this.repo = r;
         }
 
+
         [HttpGet]
         public IEnumerable<Category> List()
         {
-            //List<Category> cat = new List<Category>
-            //{
-            //    new Category { Title = "Кат"},
-            //    new Category { Title = "Кат 2"},
-            //    new Category { Title = "Кат 3"},
-            //    new Category { Title = "Кат 4"},
-            //};
-
-            //repo.Add(cat);
-            //return cat;
             return repo.GetCategoryList();
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult<Category>> Create(Category category)
+        {
+
+            repo.Add(category);
+            
+            return Ok(category);
         }
     }
 }

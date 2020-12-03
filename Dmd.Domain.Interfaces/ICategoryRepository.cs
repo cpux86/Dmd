@@ -5,7 +5,8 @@ namespace Dmd.Infrastructure.Data
 {
     public interface ICategoryRepository
     {
-        void Add(IList<Category> category);
+        void Add(Category category);
+        void AddRange(IList<Category> categories);
         void AddToCategory(string name, Category cat);
         void Copy(Category category, Category dest);
         void DeleteCategoryById(int id);

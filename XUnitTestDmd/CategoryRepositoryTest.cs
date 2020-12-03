@@ -22,7 +22,7 @@ namespace XUnitTestDmd
 
 
             CategoryRepository repo = new CategoryRepository();
-            repo.Add(cat);
+            repo.AddRange(cat);
             
         }
         [Fact]
