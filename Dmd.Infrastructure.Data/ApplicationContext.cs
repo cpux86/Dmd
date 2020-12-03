@@ -14,11 +14,6 @@ namespace Dmd.Infrastructure.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
 
-        //public ApplicationContext(DbContextOptions<ApplicationContext> options)
-        //    : base(options)
-        //{
-        //    Database.EnsureCreated();   // создаем базу данных при первом обращении
-        //}
         public ApplicationContext()
         {
             //Database.EnsureDeleted();
@@ -32,8 +27,10 @@ namespace Dmd.Infrastructure.Data
         //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Mobile.db");
-            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
+            //optionsBuilder.UseSqlite("Filename=Mobile.db");
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory)
+                .EnableSensitiveDataLogging()
+                .UseSqlite("Filename=Mobile.db");
 
         }
         // устанавливаем фабрику логгера
@@ -42,12 +39,7 @@ namespace Dmd.Infrastructure.Data
             //builder.AddConsole();
             builder.AddProvider(new MyLoggerProvider());    // указываем наш провайдер логгирования
         });
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //modelBuilder.Entity<Category>()
-            //    .HasOne(p => p.Parent).WithMany(c => c.Children).OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, LeftKey = 1, RightKey = 2, Level = 0, Parent = 0, DateModified = DateTime.Now }) ;
-        }
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseMySql(

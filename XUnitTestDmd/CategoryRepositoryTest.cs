@@ -1,6 +1,7 @@
 using Dmd.Domain.Core.Entities;
 using Dmd.Infrastructure.Data;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
@@ -11,16 +12,24 @@ namespace XUnitTestDmd
         [Fact]
         public void Create()
         {
-            Category category = new Category { Title = "Главное меню"};
+            List<Category> cat = new List<Category>
+            {
+                new Category { Title = "Кат"},
+                new Category { Title = "Кат 2"},
+                new Category { Title = "Кат 3"},
+                new Category { Title = "Кат 4"},
+            };
+
+
             CategoryRepository repo = new CategoryRepository();
-            repo.Add(category);
+            repo.Add(cat);
             
         }
         [Fact]
         public void GetCategoryByIdTest()
         {
             CategoryRepository repo = new CategoryRepository();
-            var result = repo.GetCategoryById(2);
+            var result = repo.GetCategoryById(1);
         }
         [Fact]
         public void Find()

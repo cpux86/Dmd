@@ -27,15 +27,13 @@ namespace Dmd.Domain.Core.Entities
         /// </summary>
         public int? Sort { get; set; }
 
-        public int LeftKey { get; set; }
-        public int RightKey { get; set; }
-        public int Level { get; set; }
-        public int Parent { get; set; }
+        public int? ParentId { get; set; }
+        public Category Parent { get; set; }
+        public ICollection<Category> Children { get; set; }
         /// <summary>
         /// Дата модификации
         /// </summary>
         public DateTimeOffset DateModified { get; set; }
-        //public DateTime DateModified { get; set; }
     }
 
 }

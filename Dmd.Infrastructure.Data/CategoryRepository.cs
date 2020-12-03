@@ -30,42 +30,9 @@ namespace Dmd.Infrastructure.Data
         /// Создать категорию
         /// </summary>
         /// <param name="category"></param>
-        public void Add(Category category)
+        public void Add(IList<Category> category)
         {
-            //category.Parent = 0;
-            //var cat = db.Categories.Max<Category>(e => e.RightKey);
-            ////var cat = new Category { RightKey = 1 };
-            //var cat = db.Categories.FirstOrDefault<Category>(c => c.RightKey == 0);
-            //cat.RightKey = 5;
-            //IEnumerable<Category> cat = db.Categories.Where<Category>(c => c.RightKey > 0).ToList<Category>();
-            //db.Categories.Where<Category>(e => e.RightKey > 0).ForEachAsync<Category>(e => e.RightKey = 2);
-            //db.Categories.Add(category);
-            //IQueryable<Category> res = db.Categories.Where<Category>(c => c.LeftKey > 0);
-            //Category res = new Category { Id = 3 };
-            //db.Entry(res).State = EntityState.Deleted;
-            //int number = db.Database.ExecuteSqlRaw("UPDATE Categories SET RightKey={0}, Level = (RightKey * 5) WHERE RightKey > {1}", 101, 0);
-
-
-            int categoryId = 1;
-            
-
-            Category parentCategory = db.Categories.Where<Category>(e => e.Id == categoryId).FirstOrDefault();
-
-            category.LeftKey = parentCategory.RightKey;
-            category.RightKey = parentCategory.RightKey + 1;
-            category.Level = parentCategory.Level + 1;
-            category.Parent = parentCategory.Id;
-            category.DateModified = DateTime.Now;
-
-            // 1. Обновляем ключи существующего дерева
-            db.Categories.Where<Category>(e => e.LeftKey > parentCategory.RightKey).BatchUpdate<Category>(e => new Category { LeftKey = e.LeftKey + 2, RightKey = e.RightKey + 2 });
-            // 2. Обновляем родительскую ветку
-            db.Categories.Where<Category>(e => e.RightKey >= parentCategory.RightKey && e.LeftKey < parentCategory.RightKey).BatchUpdate<Category>(e => new Category { RightKey = e.RightKey + 2 });
-
-
-            db.Categories.Add(category);
-            db.SaveChanges();
-
+            db.BulkInsertAsync(category);
         }
         /// <summary>
         /// Добавить в категрию
@@ -77,6 +44,7 @@ namespace Dmd.Infrastructure.Data
             Category item = db.Categories.FirstOrDefault(c => c.Title == name);
             //item.Children.Add(cat);
             db.SaveChanges();
+            db.Set<Category>().ToListAsync();
         }
         /// <summary>
         /// Копировать категорию
@@ -95,7 +63,8 @@ namespace Dmd.Infrastructure.Data
         /// <returns></returns>
         public IEnumerable<Category> GetCategoryList()
         {
-            return db.Categories;
+            //return db.Categories.ToList();
+            return db.Set<Category>().ToList();
         }
         /// <summary>
         /// Получить категорию по id

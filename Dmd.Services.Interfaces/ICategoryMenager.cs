@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Dmd.Domain.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Dmd.Services.Interfaces
 {
-    interface ICategoryMenager
+    public interface ICategoryMenager
     {
-        
+        public void Create(Category category);
     }
 }
