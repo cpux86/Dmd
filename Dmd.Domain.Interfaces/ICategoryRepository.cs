@@ -7,7 +7,7 @@ namespace Dmd.Infrastructure.Data
     {
         void Add(Category category);
         void AddRange(IList<Category> categories);
-        void AddToCategory(string name, Category cat);
+        void AddToCategory(Category cat, int parentId);
         void Copy(Category category, Category dest);
         void DeleteCategoryById(int id);
         void Edit(Category category);

@@ -44,12 +44,11 @@ namespace Dmd.Infrastructure.Data
         /// </summary>
         /// <param name="id">идентификатор категории</param>
         /// <param name="cat">категория для добовления</param>
-        public void AddToCategory(string name, Category cat)
+        public void AddToCategory(Category cat, int parentId)
         {
-            Category item = db.Categories.FirstOrDefault(c => c.Title == name);
-            //item.Children.Add(cat);
+            Category item = db.Categories.Where(c => c.Id == parentId).FirstOrDefault();
+            item.Children = new List<Category>() { cat };
             db.SaveChanges();
-            db.Set<Category>().ToListAsync();
         }
         /// <summary>
         /// Копировать категорию
@@ -68,8 +67,7 @@ namespace Dmd.Infrastructure.Data
         /// <returns></returns>
         public IEnumerable<Category> GetCategoryList()
         {
-            //return db.Categories.ToList();
-            return db.Set<Category>().ToList();
+            return db.Categories.Where(e => e.Title == "Level 1").ToList();
         }
         /// <summary>
         /// Получить категорию по id

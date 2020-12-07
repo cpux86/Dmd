@@ -27,12 +27,13 @@ namespace Dmd.Api.Controllers
         [HttpGet]
         public IEnumerable<Category> List()
         {
-            return repo.GetCategoryList();
+            var result = repo.GetCategoryList();
+            return result;
         }
 
 
         [HttpPost]
-        public async Task<ActionResult<Category>> Create(Category category)
+        public ActionResult<Category> Create(Category category)
         {
 
             repo.Add(category);

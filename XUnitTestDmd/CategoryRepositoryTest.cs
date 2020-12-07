@@ -10,21 +10,26 @@ namespace XUnitTestDmd
     public class CategoryRepositoryTest
     {
         [Fact]
-        public void Create()
+        public void Add()
         {
-            List<Category> cat = new List<Category>
-            {
-                new Category { Title = "Кат"},
-                new Category { Title = "Кат 2"},
-                new Category { Title = "Кат 3"},
-                new Category { Title = "Кат 4"},
-            };
+            Category category = new Category { Title = "Root" };
 
 
             CategoryRepository repo = new CategoryRepository();
-            repo.AddRange(cat);
+            repo.Add(category);
             
         }
+
+        [Fact]
+        public void AddToCategory()
+        {
+            CategoryRepository repo = new CategoryRepository();
+            Category item = new Category { Title = "Item1" };
+            
+            repo.AddToCategory(item, 1);
+
+        }
+
         [Fact]
         public void GetCategoryByIdTest()
         {

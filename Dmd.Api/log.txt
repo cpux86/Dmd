@@ -206,4 +206,226 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
 SELECT "Id"
 FROM "Categories"
 WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Executed DbCommand (4ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1='Описание' (Size = 8), @p2=NULL, @p3='1' (Nullable = true) (DbType = String), @p4=NULL, @p5='Овощи' (Size = 5)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1='Описание' (Size = 8), @p2=NULL, @p3=NULL, @p4=NULL, @p5='Овощи' (Size = 5)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1='Описание' (Size = 8), @p2=NULL, @p3=NULL, @p4=NULL, @p5='Овощи' (Size = 5)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1='Описание' (Size = 8), @p2=NULL, @p3=NULL, @p4=NULL, @p5='Овощи' (Size = 5)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1='Описание' (Size = 8), @p2=NULL, @p3=NULL, @p4=NULL, @p5='Овощи' (Size = 5)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1=NULL, @p2=NULL, @p3=NULL, @p4=NULL, @p5='Root' (Size = 4)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1=NULL, @p2=NULL, @p3=NULL, @p4=NULL, @p5='Root' (Size = 4)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1=NULL, @p2=NULL, @p3=NULL, @p4=NULL, @p5='Root1' (Size = 5)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageName", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"
+WHERE "c"."Title" = 'Level 1'Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"
+WHERE "c"."Title" = 'Level 1'Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"
+WHERE "c"."Title" = 'Level 1'Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"
+WHERE "c"."Title" = 'Level 1'Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."DateModified", "c"."Description", "c"."ImageName", "c"."ParentId", "c"."Sort", "c"."Title"
+FROM "Categories" AS "c"
+WHERE "c"."Title" = 'Level 1'
