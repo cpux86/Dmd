@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Dmd.Api.ViewModel;
 using Dmd.Domain.Core.Entities;
 using Dmd.Infrastructure.Data;
 using Dmd.Services.Interfaces;
@@ -16,19 +18,22 @@ namespace Dmd.Api.Controllers
     {
         private ICategoryMenager menager;
         private ICategoryRepository repo;
+        private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryMenager m, ICategoryRepository r)
+        public CategoryController(ICategoryMenager m, ICategoryRepository r, IMapper mapper)
         {
             this.menager = m;
             this.repo = r;
+            _mapper = mapper;
         }
 
 
         [HttpGet]
-        public IEnumerable<Category> List()
+        public List<CategoryViewModel> List()
         {
-            var result = repo.GetCategoryList();
-            return result;
+            IEnumerable<Category> cat = repo.GetCategoryList();
+            var catViewModel = _mapper.Map<IEnumerable<Category>, List<CategoryViewModel>> (cat);
+            return catViewModel;
         }
 
 
@@ -40,5 +45,6 @@ namespace Dmd.Api.Controllers
             
             return Ok(category);
         }
+
     }
 }

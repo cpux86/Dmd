@@ -1,4 +1,5 @@
 
+using AutoMapper;
 using Dmd.Infrastructure.Business;
 using Dmd.Infrastructure.Data;
 using Dmd.Services.Interfaces;
@@ -22,6 +23,8 @@ namespace Dmd.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<ICategoryMenager, CategoryMenager>();
             services.AddControllers().AddNewtonsoftJson(options =>
