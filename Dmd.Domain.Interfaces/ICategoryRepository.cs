@@ -1,7 +1,8 @@
 ﻿using Dmd.Domain.Core.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Dmd.Infrastructure.Data
+namespace Dmd.Domain.Interfaces
 {
     public interface ICategoryRepository
     {
@@ -14,7 +15,8 @@ namespace Dmd.Infrastructure.Data
         bool Exists(int id);
         bool ExistsCategoryName(string catName);
         Category GetCategoryById(int id);
-        IEnumerable<Category> GetCategoryList();
+        //IEnumerable<Category> GetCategoryList();
+        Task<IEnumerable<Category>> GetCategoryList();
         int GetCount();
         IEnumerable<Category> GetPreViewResult(string searchStr);
         void Move(int sourceId, int destId);

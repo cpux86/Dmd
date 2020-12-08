@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Dmd.Api.ViewModel;
 using Dmd.Domain.Core.Entities;
-using Dmd.Infrastructure.Data;
+using Dmd.Domain.Interfaces;
 using Dmd.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,13 +28,13 @@ namespace Dmd.Api.Controllers
         }
 
 
-        [HttpGet]
-        public List<CategoryViewModel> List()
-        {
-            IEnumerable<Category> cat = repo.GetCategoryList();
-            var catViewModel = _mapper.Map<IEnumerable<Category>, List<CategoryViewModel>> (cat);
-            return catViewModel;
-        }
+        //[HttpGet]
+        //public List<CategoryViewModel> List()
+        //{
+        //    IEnumerable<Category> cat = repo.GetCategoryList();
+        //    var catViewModel = _mapper.Map<IEnumerable<Category>, List<CategoryViewModel>> (cat);
+        //    return catViewModel;
+        //}
 
 
         [HttpPost]

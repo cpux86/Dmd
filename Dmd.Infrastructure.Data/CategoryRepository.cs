@@ -1,5 +1,6 @@
 ﻿using Dmd.Domain.Core;
 using Dmd.Domain.Core.Entities;
+using Dmd.Domain.Interfaces;
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -65,9 +66,9 @@ namespace Dmd.Infrastructure.Data
         /// Получить весь список категорий
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Category> GetCategoryList()
+        public async Task<IEnumerable<Category>> GetCategoryList()
         {
-            return db.Categories.Where(e => e.Title == "Level 1").ToList();
+            return await db.Categories.Where(e => e.Title == "Level 1").ToListAsync();
         }
         /// <summary>
         /// Получить категорию по id
