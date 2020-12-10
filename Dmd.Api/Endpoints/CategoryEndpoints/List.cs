@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Dmd.Api.Endpoints.CategoryEndpoints
 {
-    public class List : BaseAsyncEndpoint<CategoryResponse>
+    public class List : BaseAsyncEndpoint<CategoryListResponse>
     {
         private readonly ICategoryRepository _repo;
-        private  IMapper _mapper;
+        private IMapper _mapper;
 
         public List(ICategoryRepository repo, IMapper mapper)
         {
@@ -22,29 +22,12 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             _mapper = mapper;
         }
 
-        //[HttpGet("api/category/list")]
-        //public async Task<ActionResult> HandleAsync()
-        //{
-        //    var result = await _repo.GetCategoryList();
-
-        //    return Ok(result);
-        //}
-
         [HttpGet("api/category/list")]
-        public async override Task<ActionResult<CategoryResponse>> HandleAsync(CancellationToken cancellationToken = default)
+        public async override Task<ActionResult<CategoryListResponse>> HandleAsync(CancellationToken cancellationToken = default)
         {
-            IEnumerable<CategoryResponse> result = (await _repo.GetCategoryList()).Select(_mapper.Map<CategoryResponse>);
-
+            IEnumerable<CategoryListResponse> result = (await _repo.GetCategoryList())
+                .Select(_mapper.Map<CategoryListResponse>);
             return Ok(result);
         }
-
-        //[HttpGet("api/category/list")]
-        //public async override Task<ActionResult<CategoryResponse>> HandleAsync(CancellationToken cancellationToken = default)
-        //{
-        //    //IEnumerable<CategoryResponse> result = _r
-        //    var result = await _repo.GetCategoryList();
-
-        //    return Ok(result);
-        //}
     }
 }
