@@ -66,9 +66,9 @@ namespace Dmd.Infrastructure.Data
         /// Получить весь список категорий
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<Category>> GetCategoryList()
+        public async Task<IReadOnlyList<Category>> GetCategoryList()
         {
-            return await db.Categories.Where(e => e.Title == "Level 1").ToListAsync();
+            return await db.Categories.ToListAsync();
         }
         /// <summary>
         /// Получить категорию по id

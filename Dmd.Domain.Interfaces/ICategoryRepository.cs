@@ -16,7 +16,7 @@ namespace Dmd.Domain.Interfaces
         bool ExistsCategoryName(string catName);
         Category GetCategoryById(int id);
         //IEnumerable<Category> GetCategoryList();
-        Task<IEnumerable<Category>> GetCategoryList();
+        Task<IReadOnlyList<Category>> GetCategoryList();
         int GetCount();
         IEnumerable<Category> GetPreViewResult(string searchStr);
         void Move(int sourceId, int destId);

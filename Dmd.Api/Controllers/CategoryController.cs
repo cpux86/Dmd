@@ -31,8 +31,8 @@ namespace Dmd.Api.Controllers
         //[HttpGet]
         //public List<CategoryViewModel> List()
         //{
-        //    IEnumerable<Category> cat = repo.GetCategoryList();
-        //    var catViewModel = _mapper.Map<IEnumerable<Category>, List<CategoryViewModel>> (cat);
+        //    var cat =  repo.GetCategoryList();
+        //    var catViewModel = _mapper.Map<IEnumerable<Category>, List<CategoryViewModel>>(cat);
         //    return catViewModel;
         //}
 

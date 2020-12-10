@@ -1,4 +1,6 @@
 ﻿using Ardalis.ApiEndpoints;
+using AutoMapper;
+using Dmd.Domain.Core.Entities;
 using Dmd.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,13 +11,15 @@ using System.Threading.Tasks;
 
 namespace Dmd.Api.Endpoints.CategoryEndpoints
 {
-    public class List : BaseAsyncEndpoint<CategoryDto>
+    public class List : BaseAsyncEndpoint<CategoryResponse>
     {
         private readonly ICategoryRepository _repo;
+        private  IMapper _mapper;
 
-        public List(ICategoryRepository repo)
+        public List(ICategoryRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         //[HttpGet("api/category/list")]
@@ -27,11 +31,20 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         //}
 
         [HttpGet("api/category/list")]
-        public async override Task<ActionResult<CategoryDto>> HandleAsync(CancellationToken cancellationToken = default)
+        public async override Task<ActionResult<CategoryResponse>> HandleAsync(CancellationToken cancellationToken = default)
         {
-            CategoryDto result = await _repo.GetCategoryList();
+            IEnumerable<CategoryResponse> result = (await _repo.GetCategoryList()).Select(_mapper.Map<CategoryResponse>);
 
             return Ok(result);
         }
+
+        //[HttpGet("api/category/list")]
+        //public async override Task<ActionResult<CategoryResponse>> HandleAsync(CancellationToken cancellationToken = default)
+        //{
+        //    //IEnumerable<CategoryResponse> result = _r
+        //    var result = await _repo.GetCategoryList();
+
+        //    return Ok(result);
+        //}
     }
 }
