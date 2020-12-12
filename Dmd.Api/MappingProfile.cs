@@ -14,7 +14,9 @@ namespace Dmd.Api
         public MappingProfile()
         {
             CreateMap<Category, CategoryViewModel>();
-            CreateMap<Category, CategoryListResponse>().ForMember("ImageUrl", opt => opt.MapFrom(c => c.ImageName));
+            CreateMap<Category, ListResponse>()
+                .ForMember("ImageUrl", opt => opt.MapFrom(c => c.ImageUrl))
+                .ForMember("Items", opt => opt.MapFrom(c => c.Items.Count));
         }
     }
 }

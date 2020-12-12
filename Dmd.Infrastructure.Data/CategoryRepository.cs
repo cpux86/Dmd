@@ -48,7 +48,7 @@ namespace Dmd.Infrastructure.Data
         public void AddToCategory(Category cat, int parentId)
         {
             Category item = db.Categories.Where(c => c.Id == parentId).FirstOrDefault();
-            item.Children = new List<Category>() { cat };
+            item.Items = new List<Category>() { cat };
             db.SaveChanges();
         }
         /// <summary>
@@ -66,9 +66,9 @@ namespace Dmd.Infrastructure.Data
         /// Получить весь список категорий
         /// </summary>
         /// <returns></returns>
-        public async Task<IReadOnlyList<Category>> GetCategoryList()
+        public async Task<IReadOnlyList<Category>> GetCategoryList(int categoryId)
         {
-            return await db.Categories.ToListAsync();
+            return await db.Categories.Where(e => e.ParentId == categoryId).Include(e => e.Items).ToListAsync();
         }
         /// <summary>
         /// Получить категорию по id
@@ -146,8 +146,6 @@ namespace Dmd.Infrastructure.Data
            return db.Categories.Where<Category>(c => EF.Functions.Like(c.Title.ToUpper(), $"%{searchStr.ToLower()}%"));
             //return _db.Category.Where<Category>(c => EF.Functions.FreeText(c.Title, searchStr));
         }
-
-        
         #endregion
     }
 }

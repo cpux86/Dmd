@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Dmd.Api.Endpoints.CategoryEndpoints
 {
-    public class List : BaseAsyncEndpoint<CategoryListResponse>
+    public class List : BaseAsyncEndpoint<ListRequest, ListResponse>
     {
         private readonly ICategoryRepository _repo;
         private IMapper _mapper;
@@ -22,11 +22,11 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             _mapper = mapper;
         }
 
-        [HttpGet("api/category/list")]
-        public async override Task<ActionResult<CategoryListResponse>> HandleAsync(CancellationToken cancellationToken = default)
+        [HttpGet("api/category/list/{Id}")]
+        public async override Task<ActionResult<ListResponse>> HandleAsync([FromRoute] ListRequest request, CancellationToken cancellationToken = default)
         {
-            IEnumerable<CategoryListResponse> result = (await _repo.GetCategoryList())
-                .Select(_mapper.Map<CategoryListResponse>);
+            IEnumerable<ListResponse> result = (await _repo.GetCategoryList(request.Id))
+                .Select(_mapper.Map<ListResponse>);
             return Ok(result);
         }
     }

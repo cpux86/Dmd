@@ -17,7 +17,7 @@ namespace Dmd.Domain.Core.Entities
         /// <summary>
         /// Имя файла-изображения
         /// </summary>
-        public string ImageName { get; set; }
+        public string ImageUrl { get; set; }
         /// <summary>
         /// Описание категории
         /// </summary>
@@ -29,7 +29,7 @@ namespace Dmd.Domain.Core.Entities
 
         public int? ParentId { get; set; }
         public Category Parent { get; set; }
-        public ICollection<Category> Children { get; set; }
+        public ICollection<Category> Items { get; set; }
         /// <summary>
         /// Дата модификации
         /// </summary>
