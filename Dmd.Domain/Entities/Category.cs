@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace Dmd.Domain.Core.Entities
+namespace Dmd.Domain.Entities
 {
 
     public class Category : BaseEntities

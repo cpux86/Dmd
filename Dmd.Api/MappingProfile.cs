@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Dmd.Api.Endpoints.CategoryEndpoints;
 using Dmd.Api.ViewModel;
-using Dmd.Domain.Core.Entities;
+using Dmd.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

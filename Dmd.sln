@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain.Core", "Dmd.Domain\Dmd.Domain.Core.csproj", "{7EA1CECB-AB82-41CC-855A-39425032779E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmd.Domain", "Dmd.Domain\Dmd.Domain.csproj", "{7EA1CECB-AB82-41CC-855A-39425032779E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{89F5D2F8-5333-4EEB-8216-2E344FCD599A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{89F5D2F8-5333-4EEB-8216-2E344FCD599A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{E01FC33C-33DA-4275-8796-E32C053040FB}"
 EndProject

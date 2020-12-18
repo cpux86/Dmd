@@ -26,8 +26,9 @@ namespace Dmd.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<ICategoryMenager, CategoryMenager>();
+            //services.AddTransient<ICategoryRepository, CategoryRepository>();
+            //services.AddTransient<ICategoryMenager, CategoryMenager>();
+            services.AddInfrastuctureData(Configuration);
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>

@@ -5,8 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CategoryRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Dmd.Domain.Interfaces\Dmd.Domain.Interfaces.csproj" />
-    <ProjectReference Include="..\Dmd.Domain\Dmd.Domain.Core.csproj" />
+    <ProjectReference Include="..\Dmd.Domain\Dmd.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Context\" />
   </ItemGroup>
 
 </Project>

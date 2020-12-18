@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ardalis.Specification;
-using Dmd.Domain.Core.Entities;
+using Dmd.Domain.Entities;
 
-namespace Dmd.Domain.Core.Specification
+namespace Dmd.Domain.Specification
 {
     public sealed class CategoryFilterSpecification : Specification<Category>
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using Dmd.Domain.Core.Entities;
+using Dmd.Domain.Entities;
 using Microsoft.Extensions.Logging;
 
 namespace Dmd.Infrastructure.Data
@@ -27,7 +27,6 @@ namespace Dmd.Infrastructure.Data
         //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlite("Filename=Mobile.db");
             optionsBuilder.UseLoggerFactory(MyLoggerFactory)
                 .EnableSensitiveDataLogging()
                 .UseSqlite("Filename=Mobile.db");

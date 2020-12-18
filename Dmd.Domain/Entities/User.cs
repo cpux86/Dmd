@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dmd.Domain.Core.Entities
+namespace Dmd.Domain.Entities
 {
     public class User : BaseEntities
     {

@@ -1,5 +1,6 @@
-﻿using Dmd.Domain.Core;
-using Dmd.Domain.Core.Entities;
+﻿using Ardalis.Specification;
+using Dmd.Domain;
+using Dmd.Domain.Entities;
 using Dmd.Domain.Interfaces;
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Dmd.Infrastructure.Data
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepositoryAsync
     {
         private readonly ApplicationContext db;
         public CategoryRepository()
@@ -24,6 +25,7 @@ namespace Dmd.Infrastructure.Data
         public IEnumerable<Category> Find(Func<Category, bool> cat)
         {
             return db.Categories.Where(cat).ToList();
+
         }
 
         #region CREATE
@@ -68,7 +70,7 @@ namespace Dmd.Infrastructure.Data
         /// <returns></returns>
         public async Task<IReadOnlyList<Category>> GetCategoryList(int categoryId)
         {
-            return await db.Categories.Where(e => e.ParentId == categoryId).Include(e => e.Items).ToListAsync();
+            return await db.Set<Category>().Where(e => e.ParentId == categoryId).Include(e => e.Items).ToListAsync();
         }
         /// <summary>
         /// Получить категорию по id
@@ -77,6 +79,7 @@ namespace Dmd.Infrastructure.Data
         /// <returns></returns>
         public Category GetCategoryById(int id)
         {
+            //db.Categories.Where(e => e.Id == 1).Select(e => new { e.Id }).ToListAsync();
             return db.Categories.Where(c => c.Id == id).FirstOrDefault();
         }
 
@@ -143,9 +146,48 @@ namespace Dmd.Infrastructure.Data
         public IEnumerable<Category> GetPreViewResult(string searchStr)
         {
             //return _db.Category.Where(c => c.Title.ToLower().Contains(searchStr.ToLower()));
-           return db.Categories.Where<Category>(c => EF.Functions.Like(c.Title.ToUpper(), $"%{searchStr.ToLower()}%"));
+            return db.Categories.Where<Category>(c => EF.Functions.Like(c.Title.ToUpper(), $"%{searchStr.ToLower()}%"));
             //return _db.Category.Where<Category>(c => EF.Functions.FreeText(c.Title, searchStr));
         }
         #endregion
+        public Task<Category> AddAsync(Category entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> CountAsync(ISpecification<Category> spec)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Category> FirstAsync(ISpecification<Category> spec)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Category> FirstOrDefaultAsync(ISpecification<Category> spec)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Category> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<Category>> ListAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<Category>> ListAsync(ISpecification<Category> spec)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(Category entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

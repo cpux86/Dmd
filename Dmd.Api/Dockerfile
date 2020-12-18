@@ -9,7 +9,7 @@ WORKDIR /src
 COPY ["Dmd.Api/Dmd.Api.csproj", "Dmd.Api/"]
 COPY ["Dmd.Infrastructure.Data/Dmd.Infrastructure.Data.csproj", "Dmd.Infrastructure.Data/"]
 COPY ["Dmd.Domain.Interfaces/Dmd.Domain.Interfaces.csproj", "Dmd.Domain.Interfaces/"]
-COPY ["Dmd.Domain/Dmd.Domain.Core.csproj", "Dmd.Domain/"]
+COPY ["Dmd.Domain/Dmd.Domain.csproj", "Dmd.Domain/"]
 COPY ["Dmd.Services.Interfaces/Dmd.Services.Interfaces.csproj", "Dmd.Services.Interfaces/"]
 COPY ["Dmd.Infrastructure.Business/Dmd.Infrastructure.Business.csproj", "Dmd.Infrastructure.Business/"]
 RUN dotnet restore "Dmd.Api/Dmd.Api.csproj"

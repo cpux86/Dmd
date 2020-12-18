@@ -1,5 +1,5 @@
 ﻿using Ardalis.Specification;
-using Dmd.Domain.Core.Entities;
+using Dmd.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dmd.Domain.Interfaces
 {
-    public interface IAsyncRepository<T> where T : BaseEntities
+    public interface IGenericRepositoryAsync<T> where T : class
     {
         Task<T> GetByIdAsync(int id);
         Task<IReadOnlyList<T>> ListAllAsync();

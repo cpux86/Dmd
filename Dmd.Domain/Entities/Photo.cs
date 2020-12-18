@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dmd.Domain.Core.Entities
+namespace Dmd.Domain.Entities
 {
     /// <summary>
     /// Сведения о фотографиях

@@ -1,4 +1,4 @@
-﻿using Dmd.Domain.Core.Entities;
+﻿using Dmd.Domain.Entities;
 using Dmd.Services.Interfaces;
 using System;
 using System.Collections.Generic;

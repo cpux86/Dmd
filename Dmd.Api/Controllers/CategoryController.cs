@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Dmd.Api.ViewModel;
-using Dmd.Domain.Core.Entities;
+using Dmd.Domain.Entities;
 using Dmd.Domain.Interfaces;
+using Dmd.Domain.Interfaces.Repository;
 using Dmd.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +18,10 @@ namespace Dmd.Api.Controllers
     public class CategoryController : ControllerBase
     {
         private ICategoryMenager menager;
-        private ICategoryRepository repo;
+        private ICategoryRepositoryAsync repo;
         private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryMenager m, ICategoryRepository r, IMapper mapper)
+        public CategoryController(ICategoryMenager m, ICategoryRepositoryAsync r, IMapper mapper)
         {
             this.menager = m;
             this.repo = r;
@@ -37,14 +38,13 @@ namespace Dmd.Api.Controllers
         //}
 
 
-        [HttpPost]
-        public ActionResult<Category> Create(Category category)
-        {
+        //[HttpPost]
+        //public ActionResult<Category> Create(Category category)
+        //{
 
-            repo.Add(category);
+        //    repo.Add(category);
             
-            return Ok(category);
-        }
-
+        //    return Ok(category);
+        //}
     }
 }

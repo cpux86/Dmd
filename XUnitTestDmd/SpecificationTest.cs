@@ -1,5 +1,5 @@
-﻿using Dmd.Domain.Core.Entities;
-using Dmd.Domain.Core.Specification;
+﻿using Dmd.Domain.Entities;
+using Dmd.Domain.Specification;
 using Dmd.Infrastructure.Data;
 using System;
 using System.Collections.Generic;

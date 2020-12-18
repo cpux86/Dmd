@@ -1,0 +1,13 @@
+﻿using Dmd.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dmd.Domain.Interfaces.Repository
+{
+    public interface ICategoryRepositoryAsync : IGenericRepositoryAsync<Category>
+    {
+        Task<IReadOnlyList<Category>> GetCategoryList(int id);
+    }
+}
