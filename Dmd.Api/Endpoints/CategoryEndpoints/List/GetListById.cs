@@ -26,7 +26,13 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         [HttpGet("api/category/list/{Id}")]
         public async override Task<ActionResult<ListResponse>> HandleAsync([FromRoute] ListRequest request, CancellationToken cancellationToken = default)
         {
-            IEnumerable<ListResponse> result = (await _repo.GetCategoryList(request.Id))
+            //var res = await _repo.GetByIdAsync(request.Id);
+            //IEnumerable<ListResponse> result = (await _repo.GetCategoryList(request.Id))
+            //    .Select(_mapper.Map<ListResponse>);
+            //return Ok(result);
+
+            //var res = await _repo.GetByIdAsync(request.Id);
+            IEnumerable<ListResponse> result = (await _repo.GetCategoryList(e=>e.Title == "Level 1" || e.Title == "Овощи"))
                 .Select(_mapper.Map<ListResponse>);
             return Ok(result);
         }

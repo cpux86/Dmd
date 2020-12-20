@@ -1,5 +1,6 @@
 ﻿using Ardalis.Specification;
 using Dmd.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +10,13 @@ namespace Dmd.Infrastructure.Data.Repository
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
+        private readonly DbSet<T> _db;
+
+        public GenericRepositoryAsync(ApplicationContext db)
+        {
+            _db = db.Set<T>();
+        }
+
         public Task<T> AddAsync(T entity)
         {
             throw new NotImplementedException();
@@ -29,9 +37,9 @@ namespace Dmd.Infrastructure.Data.Repository
             throw new NotImplementedException();
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _db.FindAsync(id);
         }
 
         public Task<IReadOnlyList<T>> ListAllAsync()
