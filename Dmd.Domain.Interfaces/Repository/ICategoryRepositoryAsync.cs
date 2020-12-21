@@ -9,7 +9,7 @@ namespace Dmd.Domain.Interfaces.Repository
 {
     public interface ICategoryRepositoryAsync : IGenericRepositoryAsync<Category>
     {
-        //Task<IReadOnlyList<Category>> GetCategoryList(int id);
-        Task<IReadOnlyList<Category>> GetCategoryList(Expression<Func<Category, bool>> predicate);
+        //Task<IReadOnlyList<Category>> GetListByParentId(int parentId);
+        //Task<IReadOnlyList<Category>> GetCategoryList(Expression<Func<Category, bool>> predicate);
     }
 }

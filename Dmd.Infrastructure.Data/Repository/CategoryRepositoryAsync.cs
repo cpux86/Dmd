@@ -22,15 +22,17 @@ namespace Dmd.Infrastructure.Data.Repository
         /// Получить весь список категорий
         /// </summary>
         /// <returns></returns>
-        public async Task<IReadOnlyList<Category>> GetCategoryList(int categoryId)
-        {
-            return await _db.Set<Category>().Where(e => e.ParentId == categoryId).Include(e => e.Items).ToListAsync();
-        }
+        //public async Task<IReadOnlyList<Category>> GetCategoryList(int categoryId)
+        //{
+        //    return await _db.Set<Category>().Where(e => e.ParentId == categoryId).Include(e => e.Items).ToListAsync();
+        //}
 
-        public async Task<IReadOnlyList<Category>> GetCategoryList(Expression<Func<Category, bool>> predicate)
-        {
-            //var r = await _db.Set<Category>().CountAsync(e=>e.Title == "Level 1");
-            return await _db.Set<Category>().Where(predicate).ToListAsync();
-        }
+        //public async Task<IReadOnlyList<Category>> GetListByParentId(int parentId)
+        //{
+        //    ////var r = await _db.Set<Category>().CountAsync(e=>e.Title == "Level 1");
+        //    //return await _db.Set<Category>().Where(predicate).Select(x => new { x.Title, x.ImageUrl }).ToListAsync<Category>();
+        //    //return await _db.Set<Category>().Where(predicate).ToListAsync();
+
+        //}
     }
 }

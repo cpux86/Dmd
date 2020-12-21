@@ -1,8 +1,11 @@
 ﻿using Ardalis.Specification;
+using Dmd.Domain.Entities;
 using Dmd.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,17 +42,22 @@ namespace Dmd.Infrastructure.Data.Repository
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _db.FindAsync(id);
+            return await _db.FindAsync(id).AsTask();
         }
 
-        public Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<IReadOnlyList<T>> ListAllAsync()
+        {
+            return await _db.ToListAsync<T>();
+        }
+
+        public  Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+        public async Task<IReadOnlyList<T>> ListAsync(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _db.Where<T>(predicate).ToListAsync<T>();
         }
 
         public Task UpdateAsync(T entity)

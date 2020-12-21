@@ -31,10 +31,10 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             //    .Select(_mapper.Map<ListResponse>);
             //return Ok(result);
 
-            //var res = await _repo.GetByIdAsync(request.Id);
-            IEnumerable<ListResponse> result = (await _repo.GetCategoryList(e=>e.Title == "Level 1" || e.Title == "Овощи"))
+            IEnumerable<ListResponse> result = (await _repo.ListAsync(e=>e.ParentId == request.Id && e.Title == "Level 1"))
                 .Select(_mapper.Map<ListResponse>);
             return Ok(result);
+
         }
 
 
