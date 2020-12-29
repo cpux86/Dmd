@@ -26,7 +26,7 @@ namespace Dmd.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
-            services.AddTransient<ICategoryMenager, CategoryMenager>();
+            services.AddTransient<ICategoryManager, CategoryMenager>();
 
             services.AddInfrastuctureData(Configuration);
             services.AddControllers().AddNewtonsoftJson(options =>

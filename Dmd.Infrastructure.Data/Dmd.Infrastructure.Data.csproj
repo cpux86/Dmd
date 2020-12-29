@@ -13,8 +13,4 @@
     <ProjectReference Include="..\Dmd.Domain\Dmd.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Context\" />
-  </ItemGroup>
-
 </Project>

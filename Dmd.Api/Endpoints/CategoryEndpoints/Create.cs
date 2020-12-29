@@ -16,23 +16,26 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
     {
         private readonly ICategoryRepositoryAsync _repo;
         private IMapper _mapper;
-        private ICategoryMenager _menager;
+        private ICategoryManager _categoryManager;
 
-        public Create(ICategoryRepositoryAsync repo, IMapper mapper, ICategoryMenager menager)
+        public Create(ICategoryRepositoryAsync repo, IMapper mapper, ICategoryManager manager)
         {
             _repo = repo;
             _mapper = mapper;
-            _menager = menager;
+            _categoryManager = manager;
         }
 
         [HttpPost("api/category/create")]
         public async override Task<ActionResult<CreateCategoryResponse>> HandleAsync(CreateCategoryRequest request, CancellationToken cancellationToken = default)
         {
             Category category = _mapper.Map<Category>(request);
-            _menager.Create(category);
+            if (request.ParentId == null || _repo.Find((int)request.ParentId))
+            {
+                await _repo.AddAsync(category);
+            }
 
-            var res = await _repo.AddAsync(category);
-            return Ok(res);
+            
+            return Ok(category);
         }
     }
 }

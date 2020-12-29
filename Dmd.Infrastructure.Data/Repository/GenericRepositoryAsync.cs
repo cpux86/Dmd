@@ -33,6 +33,7 @@ namespace Dmd.Infrastructure.Data.Repository
             throw new NotImplementedException();
         }
 
+
         public Task<T> FirstAsync(ISpecification<T> spec)
         {
             throw new NotImplementedException();

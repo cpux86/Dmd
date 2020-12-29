@@ -1,5 +1,6 @@
 ﻿using Dmd.Domain.Entities;
 using Dmd.Domain.Interfaces.Repository;
+using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Dmd.Infrastructure.Data.Repository
         public CategoryRepositoryAsync(ApplicationContext context) : base(context)
         {
             _db = context;           
+        }
+
+        public bool Find(int catId)
+        {
+            return _db.Categories.Where(e => e.Id == catId).Any();
         }
 
         /// <summary>

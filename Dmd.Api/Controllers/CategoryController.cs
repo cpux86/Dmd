@@ -17,11 +17,11 @@ namespace Dmd.Api.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private ICategoryMenager menager;
+        private ICategoryManager menager;
         private ICategoryRepositoryAsync repo;
         private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryMenager m, ICategoryRepositoryAsync r, IMapper mapper)
+        public CategoryController(ICategoryManager m, ICategoryRepositoryAsync r, IMapper mapper)
         {
             this.menager = m;
             this.repo = r;
