@@ -7,6 +7,6 @@ namespace Dmd.Services.Interfaces
 {
     public interface ICategoryMenager
     {
-        public void Create(Category category);
+        public Category Create(Category category);
     }
 }

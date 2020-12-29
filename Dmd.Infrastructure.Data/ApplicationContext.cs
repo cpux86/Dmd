@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using Dmd.Domain.Entities;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Dmd.Infrastructure.Data
 {
@@ -18,6 +20,10 @@ namespace Dmd.Infrastructure.Data
         {
             //Database.EnsureDeleted();
             Database.EnsureCreated();
+        }
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            return base.SaveChangesAsync(cancellationToken);
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
