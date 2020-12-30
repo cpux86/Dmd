@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Dmd.Api.Endpoints.CategoryEndpoints
 {
-    public class GetListById : BaseAsyncEndpoint<ListRequest, ListResponse>
+    public class GetListById : BaseAsyncEndpoint<ListRequest,  ListResponse>
     {
         private readonly ICategoryRepositoryAsync _repo;
         private IMapper _mapper;
@@ -31,9 +31,9 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             //    .Select(_mapper.Map<ListResponse>);
             //return Ok(result);
 
-            IEnumerable<ListResponse> result = (await _repo.ListAsync(e=>e.ParentId == request.Id && e.Title == "Level 1"))
+            IEnumerable<ListResponse> result = (await _repo.ListAsync(e=>e.ParentId == request.Id))
                 .Select(_mapper.Map<ListResponse>);
-            return Ok(result);
+            return Ok(new Responce<IEnumerable<ListResponse>>(result));
 
         }
 
