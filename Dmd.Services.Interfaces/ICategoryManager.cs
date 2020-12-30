@@ -7,7 +7,7 @@ namespace Dmd.Services.Interfaces
 {
     public interface ICategoryManager
     {
-        //public Category Create(Category category);
+        public Category Create(Category category);
         //public void Delete(int catId);
         //public void Save();
     }

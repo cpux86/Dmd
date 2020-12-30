@@ -31,11 +31,13 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             Category category = _mapper.Map<Category>(request);
             if (request.ParentId == null || _repo.Find((int)request.ParentId))
             {
+                _categoryManager.Create(category);
                 await _repo.AddAsync(category);
+                return Ok(_mapper.Map<CreateCategoryResponse>(category));
             }
 
-            
-            return Ok(category);
+
+            return BadRequest();
         }
     }
 }

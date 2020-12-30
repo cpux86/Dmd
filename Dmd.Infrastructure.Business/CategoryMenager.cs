@@ -17,12 +17,12 @@ namespace Dmd.Infrastructure.Business
             _context = context;
         }
 
-        //public Category Create(Category category)
-        //{
-        //    _category = category;
-        //    _category.DateModified = DateTimeOffset.UtcNow;
-        //    return category;
-        //}
+        public Category Create(Category category)
+        {
+            _category = category;
+            _category.DateModified = DateTimeOffset.UtcNow;
+            return category;
+        }
 
         //public void Delete(int catId)
         //{

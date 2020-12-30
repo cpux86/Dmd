@@ -18,6 +18,7 @@ namespace Dmd.Api
                 .ForMember("ImageUrl", opt => opt.MapFrom(c => c.ImageUrl))
                 .ForMember("Items", opt => opt.MapFrom(c => c.Items.Count));
             CreateMap<CreateCategoryRequest, Category>();
+            CreateMap<Category, CreateCategoryResponse>();
         }
     }
 }
