@@ -9,7 +9,6 @@ namespace Dmd.Domain.Entities
 
     public class Category : BaseEntities
     {
-
         /// <summary>
         /// Заголовок категории
         /// </summary>

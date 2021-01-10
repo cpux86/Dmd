@@ -26,7 +26,7 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             _categoryManager = manager;
         }
 
-        [HttpPost("api/category/create")]
+        [HttpPost("api/category/create/")]
         public async override Task<ActionResult<Responce<CreateCategoryResponse>>> HandleAsync(CreateCategoryRequest request, CancellationToken cancellationToken = default)
         {
             Category category = _mapper.Map<Category>(request);

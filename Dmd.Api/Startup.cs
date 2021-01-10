@@ -1,5 +1,7 @@
 
+using Application;
 using AutoMapper;
+using Dmd.Api.Extensions;
 using Dmd.Domain.Interfaces;
 using Dmd.Infrastructure.Business;
 using Dmd.Infrastructure.Data;
@@ -25,10 +27,14 @@ namespace Dmd.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(Startup));
-            services.AddTransient<ICategoryManager, CategoryMenager>();
+            services.AddAutoMapper(typeof(Startup))
+                .AddTransient<ICategoryManager, CategoryMenager>()
+                .AddApiVersioningExtension();
 
+            
             services.AddInfrastuctureData(Configuration);
+            services.AddApplicationLayer();
+
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
