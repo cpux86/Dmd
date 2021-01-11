@@ -19,10 +19,6 @@ namespace Dmd.Infrastructure.Data.Repository
             _db = context;           
         }
 
-        public bool Find(int catId)
-        {
-            return _db.Categories.Where(e => e.Id == catId).Any();
-        }
 
         /// <summary>
         /// Получить весь список категорий

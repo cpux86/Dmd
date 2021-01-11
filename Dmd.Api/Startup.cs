@@ -28,7 +28,7 @@ namespace Dmd.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup))
-                .AddTransient<ICategoryManager, CategoryMenager>()
+                .AddTransient<ICategoryService, CategoryService>()
                 .AddApiVersioningExtension();
 
             

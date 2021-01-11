@@ -23,7 +23,6 @@ namespace Dmd.Infrastructure.Data.Repository
         public async Task<T> AddAsync(T entity)
         {
             await _db.Set<T>().AddAsync(entity);
-            await _db.SaveChangesAsync();
             return entity;
             
         }
@@ -64,9 +63,19 @@ namespace Dmd.Infrastructure.Data.Repository
             return await _db.Set<T>().Where<T>(predicate).ToListAsync<T>();
         }
 
+
         public Task UpdateAsync(T entity)
         {
             throw new NotImplementedException();
+        }
+        public async void Save()
+        {
+           await _db.SaveChangesAsync();
+        }
+
+        public async Task<T> FindAsync(int id)
+        {
+            return await _db.FindAsync<T>(id);
         }
     }
 }

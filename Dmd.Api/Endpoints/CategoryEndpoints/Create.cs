@@ -17,9 +17,9 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
     {
         private readonly ICategoryRepositoryAsync _repo;
         private IMapper _mapper;
-        private ICategoryManager _categoryManager;
+        private ICategoryService _categoryManager;
 
-        public Create(ICategoryRepositoryAsync repo, IMapper mapper, ICategoryManager manager)
+        public Create(ICategoryRepositoryAsync repo, IMapper mapper, ICategoryService manager)
         {
             _repo = repo;
             _mapper = mapper;
@@ -30,7 +30,7 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         public async override Task<ActionResult<Responce<CreateCategoryResponse>>> HandleAsync(CreateCategoryRequest request, CancellationToken cancellationToken = default)
         {
             Category category = _mapper.Map<Category>(request);
-            if (request.ParentId == null || !_repo.Find((int)request.ParentId)) 
+            if (request.ParentId == null || !_repo.FindAsync((int)request.ParentId)) 
                 return BadRequest(new Responce<CreateCategoryResponse>("Ошибка запроса"));
 
             _categoryManager.Create(category);

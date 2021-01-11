@@ -19,11 +19,11 @@ namespace Dmd.Api.Controllers
     [ApiVersion("1.0")]
     public class CategoryController : BaseApiController
     {
-        private ICategoryManager _categoryMenager;
+        private ICategoryService _categoryMenager;
         private ICategoryRepositoryAsync _categoryRepository;
         private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryManager m, ICategoryRepositoryAsync r, IMapper mapper)
+        public CategoryController(ICategoryService m, ICategoryRepositoryAsync r, IMapper mapper)
         {
             this._categoryMenager = m;
             this._categoryRepository = r;
@@ -43,11 +43,13 @@ namespace Dmd.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Response<int>>> Create(CreateCategoryCommand command)
         {
+            
             var validator = new Validator();
-            var result = validator.Validate(command);
+            if (!validator.Validate(command).IsValid) return BadRequest(new Response<int>("Invalid request"));
 
 
-            if (command.ParentId != null && !_categoryRepository.Find((int)command.ParentId))
+
+            if (command.ParentId != null && !_categoryRepository.FindAsync((int)command.ParentId))
                 return BadRequest(new Response<int>("Invalid request"));
             return Ok(await Mediator.Send(command));
             
