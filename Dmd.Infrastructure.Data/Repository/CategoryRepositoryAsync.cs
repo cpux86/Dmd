@@ -16,9 +16,15 @@ namespace Dmd.Infrastructure.Data.Repository
         private readonly ApplicationContext _db;
         public CategoryRepositoryAsync(ApplicationContext context) : base(context)
         {
-            _db = context;           
+            _db = context;         
+            
         }
 
+
+        public async Task<bool> CategoryExist(Expression<Func<Category, bool>> predicate)
+        {
+            return await _db.Categories.Where(predicate).AnyAsync();
+        }
 
         /// <summary>
         /// Получить весь список категорий

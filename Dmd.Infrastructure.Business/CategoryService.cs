@@ -27,14 +27,17 @@ namespace Dmd.Infrastructure.Business
         //    if (command.ParentId != null && !_categoryRepository.Find((int)command.ParentId))
         //}
 
-        public async Task<Response<int>> Create(CreateCategoryCommand command)
+        public async Task<Response<int>> Create(CreateCategoryDTO command)
         {
+            var result = _categoryRepository.CategoryExist(e => e.ParentId == command.ParentId);
+            
+
             Category res = _mapper.Map<Category>(command);
-            if (command.ParentId != null)
-            {
-                //throw new Exception($"Category Not Found.");
-                await _categoryRepository.FindAsync((int)command.ParentId).Result.Items.Add(res);
-            }
+            if (command.ParentId != null && !result.Result) throw new Exception($"Category Not Found.");
+            
+            _categoryRepository.AddAsync(res);
+
+            return new Response<int>(res.Id);
         }
 
         //public void Delete(int catId)

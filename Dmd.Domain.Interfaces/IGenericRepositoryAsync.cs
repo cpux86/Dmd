@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Dmd.Domain.Interfaces
 {
     public interface IGenericRepositoryAsync<T> where T : class
@@ -14,7 +15,7 @@ namespace Dmd.Domain.Interfaces
         Task<IReadOnlyList<T>> ListAllAsync();
         Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
         Task<IReadOnlyList<T>> ListAsync(Expression<Func<T, bool>> predicate);
-        Task<T> AddAsync(T entity);
+        void AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task<int> CountAsync(ISpecification<T> spec);
         Task<T> FirstAsync(ISpecification<T> spec);

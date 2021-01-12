@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Application.Features.Categories.Commands.CreateCategory
 {
-    public class Validator : AbstractValidator<CreateCategoryCommand>
+    public class Validator : AbstractValidator<CreateCategoryDTO>
     {
         public Validator()
         {

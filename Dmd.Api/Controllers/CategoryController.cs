@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Application.Features.Categories.Commands.CreateCategory;
 using Application.Wrappers;
 using AutoMapper;
-using Dmd.Api.ViewModel;
 using Dmd.Domain.Entities;
 using Dmd.Domain.Interfaces;
 using Dmd.Domain.Interfaces.Repository;
@@ -20,13 +19,11 @@ namespace Dmd.Api.Controllers
     public class CategoryController : BaseApiController
     {
         private ICategoryService _categoryMenager;
-        private ICategoryRepositoryAsync _categoryRepository;
         private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryService m, ICategoryRepositoryAsync r, IMapper mapper)
+        public CategoryController(ICategoryService m, IMapper mapper)
         {
             this._categoryMenager = m;
-            this._categoryRepository = r;
             _mapper = mapper;
         }
 
@@ -41,18 +38,11 @@ namespace Dmd.Api.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Response<int>>> Create(CreateCategoryCommand command)
-        {
-            
+        public async Task<ActionResult<Response<int>>> Create(CreateCategoryDTO command)
+        {           
             var validator = new Validator();
             if (!validator.Validate(command).IsValid) return BadRequest(new Response<int>("Invalid request"));
-
-
-
-            if (command.ParentId != null && !_categoryRepository.FindAsync((int)command.ParentId))
-                return BadRequest(new Response<int>("Invalid request"));
-            return Ok(await Mediator.Send(command));
-            
+            return await _categoryMenager.Create(command);           
         }
     }
 }

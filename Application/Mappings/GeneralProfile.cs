@@ -11,7 +11,7 @@ namespace Application.Mappings
     {
         public GeneralProfile()
         {
-            CreateMap<CreateCategoryCommand, Category>();
+            CreateMap<CreateCategoryDTO, Category>();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using EFCore.BulkExtensions;
 
 namespace Dmd.Infrastructure.Data.Repository
 {
@@ -20,11 +21,9 @@ namespace Dmd.Infrastructure.Data.Repository
             _db = db;
         }
 
-        public async Task<T> AddAsync(T entity)
+        public async void AddAsync(T entity)
         {
-            await _db.Set<T>().AddAsync(entity);
-            return entity;
-            
+            await _db.BulkInsertAsync<T>(new List<T> { entity });                      
         }
 
         public Task<int> CountAsync(ISpecification<T> spec)
@@ -60,6 +59,7 @@ namespace Dmd.Infrastructure.Data.Repository
 
         public async Task<IReadOnlyList<T>> ListAsync(Expression<Func<T, bool>> predicate)
         {
+            
             return await _db.Set<T>().Where<T>(predicate).ToListAsync<T>();
         }
 
@@ -77,5 +77,7 @@ namespace Dmd.Infrastructure.Data.Repository
         {
             return await _db.FindAsync<T>(id);
         }
+
+
     }
 }

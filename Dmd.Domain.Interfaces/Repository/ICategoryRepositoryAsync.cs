@@ -11,5 +11,13 @@ namespace Dmd.Domain.Interfaces.Repository
     {
         //Task<IReadOnlyList<Category>> GetListByParentId(int parentId);
         //Task<IReadOnlyList<Category>> GetCategoryList(Expression<Func<Category, bool>> predicate);
+        /// <summary>
+        /// Проверяет существование указанной категории
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        Task<bool> CategoryExist(Expression<Func<Category, bool>> predicate);
+
+
     }
 }

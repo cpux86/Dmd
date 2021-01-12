@@ -10,7 +10,7 @@ namespace Dmd.Services.Interfaces
 {
     public interface ICategoryService
     {
-        public Task<Response<int>> Create(CreateCategoryCommand command);
+        public Task<Response<int>> Create(CreateCategoryDTO command);
         //public void Delete(int catId);
         //public void Save();
     }
