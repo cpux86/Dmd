@@ -7,13 +7,6 @@ namespace Dmd.Domain.Entities
 {
     public abstract class BaseEntities
     {
-        protected BaseEntities()
-        {
-            Guid = Guid.NewGuid();
-        }
-
-        public int Id { get; set; }
-        public Guid Guid { get; set; }
-        
+        public Int64 Id { get; set; }
     }
 }

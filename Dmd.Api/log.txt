@@ -1,171 +1,24 @@
 Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[@__command_ParentId_0='1' (Nullable = true) (DbType = String)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
-    WHERE "c"."ParentId" = @__command_ParentId_0)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@__command_ParentId_0='1' (Nullable = true) (DbType = String)], CommandType='Text', CommandTimeout='30']
+    WHERE "c"."ParentId" IS NULL)Executed DbCommand (0ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='f8cbe52c-4a0f-48f6-b617-e974009c99c5' (DbType = String), @p3='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p4=NULL, @p5=NULL, @p6='Title ' (Size = 6)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "Guid", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Executed DbCommand (0ms) [Parameters=[@p7='0001-01-01T00:00:00.0000000+00:00' (DbType = String), @p8=NULL, @p9='3a88a4f2-4142-4336-b5a1-77828e7ff046' (DbType = String), @p10=NULL, @p11='16' (Nullable = true) (DbType = String), @p12=NULL, @p13='Item' (Size = 4)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "Guid", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
-    WHERE "c"."ParentId" = @__command_ParentId_0)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@__command_ParentId_0='1' (Nullable = true) (DbType = String)], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1
-    FROM "Categories" AS "c"
-    WHERE "c"."ParentId" = @__command_ParentId_0)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@__command_ParentId_0='1' (Nullable = true) (DbType = String)], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1
-    FROM "Categories" AS "c"
-    WHERE "c"."ParentId" = @__command_ParentId_0)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@__command_ParentId_0='1' (Nullable = true) (DbType = String)], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1
-    FROM "Categories" AS "c"
-    WHERE "c"."ParentId" = @__command_ParentId_0)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Categories" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Title" TEXT NULL,
-    "ImageUrl" TEXT NULL,
-    "Description" TEXT NULL,
-    "Sort" INTEGER NULL,
-    "ParentId" INTEGER NULL,
-    "DateModified" TEXT NOT NULL,
-    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Customer" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Users" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "FirstName" TEXT NOT NULL,
-    "LastName" TEXT NULL,
-    "Phone" TEXT NULL,
-    "Email" TEXT NULL,
-    "Avatar" TEXT NULL,
-    "Photo" TEXT NULL
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Orders" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Number" TEXT NULL,
-    "DateCreate" TEXT NOT NULL,
-    "Status" TEXT NULL,
-    "CustomerId" INTEGER NULL,
-    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Products" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Title" TEXT NULL,
-    "Description" TEXT NULL,
-    "CatalogId" INTEGER NOT NULL,
-    "ReferenceCounter" INTEGER NOT NULL,
-    "OrderId" INTEGER NULL,
-    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
-    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Photo" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
-    "Name" TEXT NULL,
-    "Title" TEXT NULL,
-    "Description" TEXT NULL,
-    "ProductId" INTEGER NULL,
-    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Properties" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Name" TEXT NULL,
-    "Value" TEXT NULL,
-    "ProductId" INTEGER NULL,
-    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (3ms) [Parameters=[@__command_ParentId_0='1' (Nullable = true) (DbType = String)], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1
-    FROM "Categories" AS "c"
-    WHERE "c"."ParentId" = @__command_ParentId_0)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Categories" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Title" TEXT NULL,
-    "ImageUrl" TEXT NULL,
-    "Description" TEXT NULL,
-    "Sort" INTEGER NULL,
-    "ParentId" INTEGER NULL,
-    "DateModified" TEXT NOT NULL,
-    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Customer" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Users" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "FirstName" TEXT NOT NULL,
-    "LastName" TEXT NULL,
-    "Phone" TEXT NULL,
-    "Email" TEXT NULL,
-    "Avatar" TEXT NULL,
-    "Photo" TEXT NULL
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Orders" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Number" TEXT NULL,
-    "DateCreate" TEXT NOT NULL,
-    "Status" TEXT NULL,
-    "CustomerId" INTEGER NULL,
-    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Products" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Title" TEXT NULL,
-    "Description" TEXT NULL,
-    "CatalogId" INTEGER NOT NULL,
-    "ReferenceCounter" INTEGER NOT NULL,
-    "OrderId" INTEGER NULL,
-    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
-    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Photo" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
-    "Name" TEXT NULL,
-    "Title" TEXT NULL,
-    "Description" TEXT NULL,
-    "ProductId" INTEGER NULL,
-    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE "Properties" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
-    "Guid" TEXT NOT NULL,
-    "Name" TEXT NULL,
-    "Value" TEXT NULL,
-    "ProductId" INTEGER NULL,
-    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
-);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1
-    FROM "Categories" AS "c"
-    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
@@ -175,7 +28,325 @@ SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NO
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
     WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Guid" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Guid" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Guid" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Guid" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
@@ -186,6 +357,11 @@ SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
     WHERE "c"."ParentId" IS NULL)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
@@ -195,18 +371,206 @@ SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NO
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
-    WHERE "c"."ParentId" IS NULL)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
-    WHERE "c"."ParentId" IS NULL)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"
-    WHERE "c"."ParentId" IS NULL)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "CatalogId1" INTEGER NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId1" FOREIGN KEY ("CatalogId1") REFERENCES "Categories" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId1" ON "Products" ("CatalogId1");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Categories" AS "c"
+    WHERE "c"."ParentId" IS NULL)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1
     FROM "Categories" AS "c"

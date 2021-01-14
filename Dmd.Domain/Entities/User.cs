@@ -5,16 +5,10 @@ namespace Dmd.Domain.Entities
 {
     public class User : BaseEntities
     {
-        public User()
-        {
-            this.Guid = Guid.NewGuid();
-        }
 
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //public Guid Identity { get; set; }
-
-        public Guid Guid { get; set; }
 
         [Required]
         [Display(Name = "Имя")]

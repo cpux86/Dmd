@@ -26,8 +26,8 @@ namespace Dmd.Domain.Entities
         /// </summary>
         public int? Sort { get; set; }
 
-        public int? ParentId { get; set; }
-        public Category Parent { get; set; }
+        public Int64? ParentId { get; set; }
+        public virtual Category Parent { get; set; }
         public ICollection<Category> Items { get; set; }
         /// <summary>
         /// Дата модификации

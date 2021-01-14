@@ -38,7 +38,7 @@ namespace Dmd.Api.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Response<int>>> Create(CreateCategoryDTO command)
+        public async Task<ActionResult<Response<Int64>>> Create(CreateCategoryDTO command)
         {           
             var validator = new Validator();
             if (!validator.Validate(command).IsValid) return BadRequest(new Response<int>("Invalid request"));

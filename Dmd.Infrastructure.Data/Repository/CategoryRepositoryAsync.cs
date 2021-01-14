@@ -26,6 +26,29 @@ namespace Dmd.Infrastructure.Data.Repository
             return await _db.Categories.Where(predicate).AnyAsync();
         }
 
+        public async void AddCategory(Category category)
+        {
+            using (var transaction = _db.Database.BeginTransaction())
+            {
+                BulkConfig bulkConfig = new BulkConfig { PreserveInsertOrder = true, SetOutputIdentity = true};
+                var entities = new List<Category> { category };
+                await _db.BulkInsertAsync<Category>(entities, bulkConfig);
+                var items = new List<Category>();
+                var i = entities.FirstOrDefault();
+                foreach (var item in i.Items)
+                {
+                    item.ParentId = i.Id;
+                    items.Add(item);
+                }
+                await _db.BulkInsertAsync<Category>(items);
+                transaction.Commit();
+            }
+                
+
+            //await _db.AddAsync<T>(entity);
+            //await _db.SaveChangesAsync();
+        }
+
         /// <summary>
         /// Получить весь список категорий
         /// </summary>

@@ -23,7 +23,12 @@ namespace Dmd.Infrastructure.Data.Repository
 
         public async void AddAsync(T entity)
         {
-            await _db.BulkInsertAsync<T>(new List<T> { entity });                      
+            BulkConfig bulkConfig = new BulkConfig {  SetOutputIdentity = true };
+            //await _db.BulkInsertAsync<T>(new List<Category> { (Category)entity }, bulkConfig);
+            //var i = entity;
+
+            //await _db.AddAsync<T>(entity);
+            //await _db.SaveChangesAsync();
         }
 
         public Task<int> CountAsync(ISpecification<T> spec)
