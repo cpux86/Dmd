@@ -26,22 +26,14 @@ namespace Dmd.Infrastructure.Data.Repository
             return await _db.Categories.Where(predicate).AnyAsync();
         }
 
-        public async void AddCategory(Category category)
+        public async void AddCategoriesList(IList<Category> list)
         {
             using (var transaction = _db.Database.BeginTransaction())
             {
-                BulkConfig bulkConfig = new BulkConfig { PreserveInsertOrder = true, SetOutputIdentity = true};
-                var entities = new List<Category> { category };
-                await _db.BulkInsertAsync<Category>(entities, bulkConfig);
-                var items = new List<Category>();
-                var i = entities.FirstOrDefault();
-                foreach (var item in i.Items)
-                {
-                    item.ParentId = i.Id;
-                    items.Add(item);
-                }
-                await _db.BulkInsertAsync<Category>(items);
+                BulkConfig bulkConfig = new BulkConfig { PreserveInsertOrder = true, SetOutputIdentity = true, CalculateStats = true};
+                await _db.BulkInsertAsync<Category>(list, bulkConfig);
                 transaction.Commit();
+                var test = bulkConfig.CalculateStats;
             }
                 
 

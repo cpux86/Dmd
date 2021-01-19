@@ -17,7 +17,7 @@ namespace Dmd.Domain.Interfaces.Repository
         /// <param name="predicate"></param>
         /// <returns></returns>
         Task<bool> CategoryExist(Expression<Func<Category, bool>> predicate);
-        void AddCategory(Category category);
+        void AddCategoriesList(IList<Category> category);
 
     }
 }
