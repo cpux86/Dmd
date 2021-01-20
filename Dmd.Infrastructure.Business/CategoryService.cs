@@ -14,50 +14,28 @@ namespace Dmd.Infrastructure.Business
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryRepositoryAsync _categoryRepository;
+        private readonly ICategoryRepositoryAsync _categoryRepo;
         private readonly IMapper _mapper;
         public CategoryService(ICategoryRepositoryAsync categoryRepository, IMapper mapper)
         {
-            _categoryRepository = categoryRepository;
+            _categoryRepo = categoryRepository;
             _mapper = mapper;
         }
 
-        //public Category Create(Category category)
-        //{
-        //    if (command.ParentId != null && !_categoryRepository.Find((int)command.ParentId))
-        //}
-
         public async Task<Response<Int64>> Create(CreateCategoryDTO createCategoryDTO)
         {
-            // является ли новая категория вложеной, если да, то ищем в базе данный родителя для неё.
-            Task<bool> result;
-          if (createCategoryDTO.ParentId > 0) {
-                result = _categoryRepository.CategoryExist(e => e.Id == createCategoryDTO.ParentId);
+            // является ли новая категория вложенной.
+            if (createCategoryDTO.ParentId != null)
+            {
+                // ищем в БД указанного родителя
+                var isExist = await _categoryRepo.CategoryExist(e => e.Id == createCategoryDTO.ParentId);
+                // если родитель не найден в БД, то возращаем ошибку
+                if (!isExist) return new Response<Int64>("Category Not Found.");
             }
-            
-
-
-
-
-           // if (createCategoryDTO.ParentId != null && !result.Result) throw new Exception($"Category Not Found.");
 
             Category category = _mapper.Map<Category>(createCategoryDTO);
-            _categoryRepository.AddAsync(category);
-            
-            //_categoryRepository.AddCategoryAsync(res);
-
+            _categoryRepo.AddAsync(category);
             return new Response<Int64>(category.Id);
         }
-
-        //public void Delete(int catId)
-        //{
-
-        //    throw new NotImplementedException();
-        //}
-
-        //public async void Save()
-        //{
-        //    await _context.AddAsync(_category);
-        //}
     }
 }
