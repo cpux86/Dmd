@@ -29,17 +29,24 @@ namespace Dmd.Infrastructure.Business
 
         public async Task<Response<Int64>> Create(CreateCategoryDTO createCategoryDTO)
         {
-            Task<bool> result = _categoryRepository.CategoryExist(e => e.Id == createCategoryDTO.ParentId);
+            // является ли новая категория вложеной, если да, то ищем в базе данный родителя для неё.
+            Task<bool> result;
+          if (createCategoryDTO.ParentId > 0) {
+                result = _categoryRepository.CategoryExist(e => e.Id == createCategoryDTO.ParentId);
+            }
             
-            if (createCategoryDTO.ParentId != null && !result.Result) throw new Exception($"Category Not Found.");
 
-            Category res = _mapper.Map<Category>(createCategoryDTO);
-            List<Category> categoryList = new List<Category> { res };
-            
-            
-            _categoryRepository.AddCategoriesList(categoryList);
 
-            return new Response<Int64>(res.Id);
+
+
+           // if (createCategoryDTO.ParentId != null && !result.Result) throw new Exception($"Category Not Found.");
+
+            Category category = _mapper.Map<Category>(createCategoryDTO);
+            _categoryRepository.AddAsync(category);
+            
+            //_categoryRepository.AddCategoryAsync(res);
+
+            return new Response<Int64>(category.Id);
         }
 
         //public void Delete(int catId)

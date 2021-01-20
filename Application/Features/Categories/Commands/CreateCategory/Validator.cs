@@ -12,6 +12,11 @@ namespace Application.Features.Categories.Commands.CreateCategory
             RuleFor(s => s.Title)
                 .NotEmpty()
                 .MinimumLength(5);
+
+            RuleFor(s => s.ParentId)
+                .NotNull().When(s => s.ParentId != 2);
+
+
         }
     }
 }

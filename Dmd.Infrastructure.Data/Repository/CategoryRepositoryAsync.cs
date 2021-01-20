@@ -26,20 +26,22 @@ namespace Dmd.Infrastructure.Data.Repository
             return await _db.Categories.Where(predicate).AnyAsync();
         }
 
-        public async void AddCategoriesList(IList<Category> list)
-        {
-            using (var transaction = _db.Database.BeginTransaction())
-            {
-                BulkConfig bulkConfig = new BulkConfig { PreserveInsertOrder = true, SetOutputIdentity = true, CalculateStats = true};
-                await _db.BulkInsertAsync<Category>(list, bulkConfig);
-                transaction.Commit();
-                var test = bulkConfig.CalculateStats;
-            }
+        //public async void AddCategoryAsync(Category category, Category parentCategory = null)
+        //{
+        //    //_db.Categories.FirstOrDefault<Category>(e=>e.Id== );
+        //    //_db.Find<Category>(parentCategory);
+        //    //parentCategory.Items.Add(category);
+        //    //using (var transaction = _db.Database.BeginTransaction())
+        //    //{
+        //    //    BulkConfig bulkConfig = new BulkConfig { PreserveInsertOrder = true, SetOutputIdentity = true, CalculateStats = true};
+        //    //    await _db.BulkInsertAsync<Category>(category, bulkConfig);
+        //    //    transaction.Commit();
+        //    //    var test = bulkConfig.CalculateStats;
+        //    //}
                 
 
-            //await _db.AddAsync<T>(entity);
-            //await _db.SaveChangesAsync();
-        }
+        //    //await _db.SaveChangesAsync();
+        //}
 
         /// <summary>
         /// Получить весь список категорий
