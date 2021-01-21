@@ -42,8 +42,10 @@ namespace Dmd.Api.Controllers
         {           
             var validator = new Validator();
             if (!validator.Validate(command).IsValid) 
-                return BadRequest(new Response<int>("Invalid request"));
-            return await _categoryMenager.Create(command);           
+                return BadRequest(new Response<int>("Invalid request, error valitaion"));
+            var result = await _categoryMenager.Create(command);
+            if (!result.Succeeded) return BadRequest(result);
+            return result;
         }
     }
 }

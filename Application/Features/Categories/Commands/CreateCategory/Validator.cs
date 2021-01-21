@@ -13,8 +13,8 @@ namespace Application.Features.Categories.Commands.CreateCategory
                 .NotEmpty()
                 .MinimumLength(5);
 
-            RuleFor(s => s.ParentId)
-                .NotNull().When(s => s.ParentId != 2);
+            //RuleFor(s => s.ParentId)
+            //    .NotNull().When(s => s.ParentId != 2);
 
 
         }
