@@ -46,6 +46,7 @@ namespace Dmd.Api.Controllers
             var result = await _categoryMenager.Create(command);
             if (!result.Succeeded) return BadRequest(result);
             return result;
+
         }
     }
 }
