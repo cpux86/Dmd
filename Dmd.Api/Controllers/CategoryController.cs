@@ -16,7 +16,7 @@ using FluentValidation;
 
 namespace Dmd.Api.Controllers
 {
-    [ApiVersion("1.0")]
+    //[ApiVersion("1.0")]
     public class CategoryController : BaseApiController
     {
         private ICategoryManager _categoryMenager;

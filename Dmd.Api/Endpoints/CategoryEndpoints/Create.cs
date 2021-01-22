@@ -1,4 +1,5 @@
-﻿using Ardalis.ApiEndpoints;
+﻿using Application.Wrappers;
+using Ardalis.ApiEndpoints;
 using AutoMapper;
 using Dmd.Domain.Entities;
 using Dmd.Domain.Interfaces.Repository;
@@ -26,18 +27,22 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             _categoryManager = manager;
         }
 
-        [HttpPost("api/category/create/")]
+        [HttpPost("api/v1/category/create/")]
         public async override Task<ActionResult<Responce<CreateCategoryResponse>>> HandleAsync(CreateCategoryRequest request, CancellationToken cancellationToken = default)
         {
-            Category category = _mapper.Map<Category>(request);
-            if (request.ParentId == null || !_repo.Find((int)request.ParentId)) 
-                return BadRequest(new Responce<CreateCategoryResponse>("Ошибка запроса"));
+            var validator = new CreateValidator();
+            if (!validator.Validate(request).IsValid) 
+                return BadRequest(new Response<CreateCategoryResponse>("Invalid request, error valitaion"));
+            //Category category = _mapper.Map<Category>(request);
+            //if (request.ParentId == null || !_repo.Find((int)request.ParentId)) 
+            //    return BadRequest(new Responce<CreateCategoryResponse>("Ошибка запроса"));
 
-            _categoryManager.Create(category);
-            await _repo.AddAsync(category);
-            var res = _mapper.Map<CreateCategoryResponse>(category);
-            return Ok(new Responce<CreateCategoryResponse>(res, "Готово!"));
-            
+            //_categoryManager.Create(category);
+            //await _repo.AddAsync(category);
+            //var res = _mapper.Map<CreateCategoryResponse>(category);
+            var result = await _categoryManager.Create(command);
+            return Ok(new Responce<CreateCategoryResponse>("test!"));
+
         }
     }
 }
