@@ -1355,4 +1355,218 @@ SELECT EXISTS (
     WHERE "c"."Id" = @__catId_0)Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (3ms) [Parameters=[@p0='2021-01-22T21:13:55.7580800+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-22T21:19:34.6253311+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-22T21:26:45.3591113+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-22T21:27:12.4841654+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-22T21:27:13.9718191+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-22T21:27:14.8198409+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-22T21:27:15.4016375+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-23T10:56:43.8153602+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-23T17:19:20.0577156+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-23T17:20:05.2186967+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-23T21:43:42.7041752+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-23T21:44:29.4314269+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-23T22:06:06.3363069+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-23T22:10:50.6385975+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (4ms) [Parameters=[@p0='2021-01-23T22:17:13.8491145+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3=NULL, @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (1ms) [Parameters=[@p0='2021-01-23T22:17:55.7290955+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3='1' (Nullable = true) (DbType = String), @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Executed DbCommand (0ms) [Parameters=[@p0='2021-01-23T22:18:05.0975226+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3='100' (Nullable = true) (DbType = String), @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "Description" TEXT NULL,
+    "Sort" INTEGER NULL,
+    "ParentId" INTEGER NULL,
+    "DateModified" TEXT NOT NULL,
+    CONSTRAINT "FK_Categories_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customer" PRIMARY KEY AUTOINCREMENT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Guid" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NULL,
+    "Phone" TEXT NULL,
+    "Email" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Photo" TEXT NULL
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+    "Number" TEXT NULL,
+    "DateCreate" TEXT NOT NULL,
+    "Status" TEXT NULL,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Orders_Customer_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Products" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "CatalogId" INTEGER NOT NULL,
+    "ReferenceCounter" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_Products_Categories_CatalogId" FOREIGN KEY ("CatalogId") REFERENCES "Categories" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Products_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Photo" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Photo" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Title" TEXT NULL,
+    "Description" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Photo_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Properties" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Properties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "Value" TEXT NULL,
+    "ProductId" INTEGER NULL,
+    CONSTRAINT "FK_Properties_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE RESTRICT
+);Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Categories_ParentId" ON "Categories" ("ParentId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Photo_ProductId" ON "Photo" ("ProductId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_CatalogId" ON "Products" ("CatalogId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Products_OrderId" ON "Products" ("OrderId");Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Properties_ProductId" ON "Properties" ("ProductId");Failed executing DbCommand (4ms) [Parameters=[@p0='2021-01-23T22:19:32.5317387+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3='100' (Nullable = true) (DbType = String), @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();An exception occurred in the database while saving changes for context type 'Dmd.Infrastructure.Data.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'FOREIGN KEY constraint failed'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.Entity Framework Core 3.1.9 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: SensitiveDataLoggingEnabled Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;Failed executing DbCommand (6ms) [Parameters=[@p0='2021-01-23T22:41:11.7263795+00:00' (DbType = String), @p1='Описание 1' (Size = 10), @p2='https://images.dmd.ru/95aeebdf-9ab6-4125-acae-c34363724082.jpg' (Size = 62), @p3='100' (Nullable = true) (DbType = String), @p4=NULL, @p5='Корень 1' (Size = 8)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Categories" ("DateModified", "Description", "ImageUrl", "ParentId", "Sort", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Categories"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();An exception occurred in the database while saving changes for context type 'Dmd.Infrastructure.Data.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'FOREIGN KEY constraint failed'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

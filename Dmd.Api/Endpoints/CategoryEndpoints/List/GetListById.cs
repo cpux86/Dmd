@@ -1,8 +1,7 @@
-﻿using Ardalis.ApiEndpoints;
+﻿using Application.Interfaces.Repository;
+using Ardalis.ApiEndpoints;
 using AutoMapper;
 using Dmd.Domain.Entities;
-using Dmd.Domain.Interfaces;
-using Dmd.Domain.Interfaces.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

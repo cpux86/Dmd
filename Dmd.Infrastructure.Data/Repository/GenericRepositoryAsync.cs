@@ -1,6 +1,6 @@
-﻿using Ardalis.Specification;
+﻿using Application.Interfaces;
+using Ardalis.Specification;
 using Dmd.Domain.Entities;
-using Dmd.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

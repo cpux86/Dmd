@@ -1,5 +1,5 @@
-﻿using Dmd.Domain.Interfaces;
-using Dmd.Domain.Interfaces.Repository;
+﻿using Application.Interfaces;
+using Application.Interfaces.Repository;
 using Dmd.Infrastructure.Data.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

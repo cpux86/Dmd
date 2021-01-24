@@ -1,4 +1,5 @@
-﻿using Application.Features.Categories.Commands.CreateCategory;
+﻿using Application.DTO.Category;
+using Application.Features.Categories.Commands.CreateCategory;
 using AutoMapper;
 using Dmd.Domain.Entities;
 using System;
@@ -12,6 +13,8 @@ namespace Application.Mappings
         public GeneralProfile()
         {
             CreateMap<CreateCategoryCommand, Category>();
+            CreateMap<CreateInputDTO, Category>();
+            CreateMap<Category, CreateOutputDTO>();
         }
     }
 }

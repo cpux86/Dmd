@@ -1,5 +1,5 @@
-﻿using Dmd.Domain.Entities;
-using Dmd.Domain.Interfaces.Repository;
+﻿using Application.Interfaces.Repository;
+using Dmd.Domain.Entities;
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using System;

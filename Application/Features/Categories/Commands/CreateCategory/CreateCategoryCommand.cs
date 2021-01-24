@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using Dmd.Domain.Interfaces.Repository;
 using AutoMapper;
 using Dmd.Domain.Entities;
+using Application.Interfaces.Repository;
 
 namespace Application.Features.Categories.Commands.CreateCategory
 {

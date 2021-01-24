@@ -1,13 +1,15 @@
-﻿using Dmd.Domain.Entities;
+﻿using Application.DTO.Category;
+using Application.Wrappers;
+using Dmd.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dmd.Services.Interfaces
+namespace Application.Interfaces
 {
     public interface ICategoryManager
     {
-        public Category Create(Category category);
+        public CreateOutputDTO Create(CreateInputDTO category);
         //public void Delete(int catId);
         //public void Save();
     }

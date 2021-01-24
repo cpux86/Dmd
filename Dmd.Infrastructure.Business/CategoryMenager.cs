@@ -1,6 +1,10 @@
-﻿using Dmd.Domain.Entities;
+﻿using Application.DTO.Category;
+using Application.Interfaces;
+using Application.Interfaces.Repository;
+using Application.Wrappers;
+using AutoMapper;
+using Dmd.Domain.Entities;
 using Dmd.Infrastructure.Data;
-using Dmd.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,18 +14,25 @@ namespace Dmd.Infrastructure.Business
     public class CategoryMenager : ICategoryManager
     {
         private readonly ApplicationContext _context;
-        private Category _category;
+        private readonly ICategoryRepositoryAsync _categoryRepo;
+        private readonly IMapper _mapper;
 
-        public CategoryMenager(ApplicationContext context)
+        public CategoryMenager(ApplicationContext context, ICategoryRepositoryAsync categoryRepo, IMapper mapper)
         {
+            _categoryRepo = categoryRepo;
             _context = context;
+            _mapper = mapper;
         }
 
-        public Category Create(Category category)
+        public CreateOutputDTO Create(CreateInputDTO createInputDTO)
         {
-            _category = category;
-            _category.DateModified = DateTimeOffset.UtcNow;
-            return category;
+            //createInputDTO.
+            Category category = _mapper.Map<Category>(createInputDTO);
+
+            category.DateModified = DateTimeOffset.UtcNow;
+            _categoryRepo.AddAsync(category);
+            var result = _mapper.Map<CreateOutputDTO>(category);
+            return result;
         }
 
         //public void Delete(int catId)

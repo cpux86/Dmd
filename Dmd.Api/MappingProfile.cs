@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Application.DTO.Category;
+using AutoMapper;
 using Dmd.Api.Endpoints.CategoryEndpoints;
 using Dmd.Api.ViewModel;
 using Dmd.Domain.Entities;
@@ -17,8 +18,8 @@ namespace Dmd.Api
             CreateMap<Category, ListResponse>()
                 .ForMember("ImageUrl", opt => opt.MapFrom(c => c.ImageUrl))
                 .ForMember("Items", opt => opt.MapFrom(c => c.Items.Count));
-            CreateMap<CreateCategoryRequest, Category>();
-            CreateMap<Category, CreateCategoryResponse>();
+            CreateMap<CreateCategoryRequest, CreateInputDTO>();
+            CreateMap<CreateOutputDTO, CreateCategoryResponse>();
         }
     }
 }

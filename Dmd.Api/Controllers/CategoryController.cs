@@ -5,14 +5,11 @@ using System.Threading.Tasks;
 using Application.Features.Categories.Commands.CreateCategory;
 using Application.Wrappers;
 using AutoMapper;
-using Dmd.Api.ViewModel;
-using Dmd.Domain.Entities;
-using Dmd.Domain.Interfaces;
-using Dmd.Domain.Interfaces.Repository;
-using Dmd.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
+using Application.Interfaces;
+using Application.Interfaces.Repository;
 
 namespace Dmd.Api.Controllers
 {

@@ -1,11 +1,10 @@
 
 using Application;
+using Application.Interfaces;
 using AutoMapper;
 using Dmd.Api.Extensions;
-using Dmd.Domain.Interfaces;
 using Dmd.Infrastructure.Business;
 using Dmd.Infrastructure.Data;
-using Dmd.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

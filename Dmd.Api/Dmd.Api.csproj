@@ -18,7 +18,6 @@
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Dmd.Infrastructure.Business\Dmd.Infrastructure.Business.csproj" />
     <ProjectReference Include="..\Dmd.Infrastructure.Data\Dmd.Infrastructure.Data.csproj" />
-    <ProjectReference Include="..\Dmd.Services.Interfaces\Dmd.Services.Interfaces.csproj" />
   </ItemGroup>
 
 

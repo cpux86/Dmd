@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dmd.Domain.Interfaces
+namespace Application.Interfaces
 {
     public interface IGenericRepositoryAsync<T> where T : class
     {
