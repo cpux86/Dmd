@@ -44,7 +44,7 @@ namespace Dmd.Api.Controllers
             var result = validator.Validate(command);
 
 
-            if (command.ParentId != null && !_categoryRepository.Find((int)command.ParentId))
+            if (command.ParentId != null && !_categoryRepository.IsExist((int)command.ParentId))
                 return BadRequest(new Response<int>("Invalid request"));
             return Ok(await Mediator.Send(command));
             

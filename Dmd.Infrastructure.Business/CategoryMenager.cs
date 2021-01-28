@@ -8,31 +8,41 @@ using Dmd.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Dmd.Infrastructure.Business
 {
     public class CategoryMenager : ICategoryManager
     {
-        private readonly ApplicationContext _context;
         private readonly ICategoryRepositoryAsync _categoryRepo;
         private readonly IMapper _mapper;
 
-        public CategoryMenager(ApplicationContext context, ICategoryRepositoryAsync categoryRepo, IMapper mapper)
+        public CategoryMenager(ICategoryRepositoryAsync categoryRepo, IMapper mapper)
         {
             _categoryRepo = categoryRepo;
-            _context = context;
             _mapper = mapper;
         }
 
-        public CreateOutputDTO Create(CreateInputDTO createInputDTO)
+        public async Task<Response<CreateOutputDTO>> Create(CreateInputDTO createInputDTO)
         {
-            //createInputDTO.
-            Category category = _mapper.Map<Category>(createInputDTO);
+            try
+            {
+                var ex = _categoryRepo.IsExist((int)createInputDTO.ParentId);
+                if (!ex) return new Response<CreateOutputDTO>("Invalid request");
 
-            category.DateModified = DateTimeOffset.UtcNow;
-            _categoryRepo.AddAsync(category);
-            var result = _mapper.Map<CreateOutputDTO>(category);
-            return result;
+                Category category = _mapper.Map<Category>(createInputDTO);
+
+                category.DateModified = DateTimeOffset.UtcNow;
+                await _categoryRepo.AddAsync(category);
+                var result = _mapper.Map<CreateOutputDTO>(category);
+                return new Response<CreateOutputDTO>(result);
+            }
+            catch (Exception)
+            {
+
+                return new Response<CreateOutputDTO>("request error");
+            }
+            
         }
 
         //public void Delete(int catId)

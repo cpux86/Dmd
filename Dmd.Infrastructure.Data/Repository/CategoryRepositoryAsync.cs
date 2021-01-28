@@ -18,8 +18,12 @@ namespace Dmd.Infrastructure.Data.Repository
         {
             _db = context;           
         }
-
-        public bool Find(int catId)
+        /// <summary>
+        /// Существует ли категория с указанным id
+        /// </summary>
+        /// <param name="catId"></param>
+        /// <returns></returns>
+        public bool IsExist(int catId)
         {
             return _db.Categories.Where(e => e.Id == catId).Any();
         }

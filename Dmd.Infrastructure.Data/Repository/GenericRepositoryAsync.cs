@@ -24,8 +24,7 @@ namespace Dmd.Infrastructure.Data.Repository
         {
             await _db.Set<T>().AddAsync(entity);
             await _db.SaveChangesAsync();
-            return entity;
-            
+            return entity;           
         }
 
         public Task<int> CountAsync(ISpecification<T> spec)

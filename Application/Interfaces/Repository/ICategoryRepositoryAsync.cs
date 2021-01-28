@@ -12,6 +12,11 @@ namespace Application.Interfaces.Repository
     {
         //Task<IReadOnlyList<Category>> GetListByParentId(int parentId);
         //Task<IReadOnlyList<Category>> GetCategoryList(Expression<Func<Category, bool>> predicate);
-        bool Find(int catId);
+        /// <summary>
+        /// Существует ли категория с указанным id
+        /// </summary>
+        /// <param name="catId"></param>
+        /// <returns></returns>
+        bool IsExist(int catId);
     }
 }

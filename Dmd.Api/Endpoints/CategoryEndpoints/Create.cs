@@ -38,9 +38,10 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
                 return BadRequest(new Response<CreateCategoryResponse>("Invalid request, error valitaion"));
 
             CreateInputDTO createInputDTO = _mapper.Map<CreateInputDTO>(request);
-            var result = _categoryManager.Create(createInputDTO);
-            var categoryResp = _mapper.Map<CreateCategoryResponse>(result);
-            
+            var result = await _categoryManager.Create(createInputDTO);
+            var categoryResp = _mapper.Map<CreateCategoryResponse>(result.Data);
+            if (!result.Succeeded) return BadRequest(new Responce<CreateCategoryResponse>("Invalid request."));
+
             return Ok(new Responce<CreateCategoryResponse>(categoryResp, "succeeded"));
 
         }

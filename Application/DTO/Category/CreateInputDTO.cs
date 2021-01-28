@@ -24,6 +24,5 @@ namespace Application.DTO.Category
         public int? Sort { get; set; }
 
         public int? ParentId { get; set; }
-        public DateTimeOffset DateModified { get; set; }
     }
 }
