@@ -13,6 +13,6 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         public string Title { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
-        public int? ParentId { get; set; }
+        public int? Parent { get; set; }
     }
 }

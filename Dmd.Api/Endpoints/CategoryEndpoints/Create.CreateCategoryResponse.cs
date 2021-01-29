@@ -25,6 +25,6 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         /// </summary>
         public int? Sort { get; set; }
 
-        public int? ParentId { get; set; }
+        public int? Parent { get; set; }
     }
 }

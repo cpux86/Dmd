@@ -14,12 +14,15 @@ namespace Dmd.Api
     {
         public MappingProfile()
         {
-            CreateMap<Category, CategoryViewModel>();
             CreateMap<Category, ListResponse>()
                 .ForMember("ImageUrl", opt => opt.MapFrom(c => c.ImageUrl))
                 .ForMember("Items", opt => opt.MapFrom(c => c.Items.Count));
-            CreateMap<CreateCategoryRequest, CreateInputDTO>();
-            CreateMap<CreateOutputDTO, CreateCategoryResponse>();
+            // mapping Requst  на InputDTO
+            CreateMap<CreateCategoryRequest, CreateInputDTO>()
+                .ForMember(c=>c.ParentId, opt => opt.MapFrom(c => c.Parent));
+            // обратный маппинг
+            CreateMap<CreateOutputDTO, CreateCategoryResponse>()
+                .ForMember(c=>c.Parent, opt=>opt.MapFrom(c=>c.ParentId));
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Application.Mappings
     {
         public GeneralProfile()
         {
-            CreateMap<CreateCategoryCommand, Category>();
+            //CreateMap<CreateCategoryCommand, Category>();
             CreateMap<CreateInputDTO, Category>();
             CreateMap<Category, CreateOutputDTO>();
         }

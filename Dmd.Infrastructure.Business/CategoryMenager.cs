@@ -27,9 +27,12 @@ namespace Dmd.Infrastructure.Business
         {
             try
             {
-                var ex = _categoryRepo.IsExist((int)createInputDTO.ParentId);
-                if (!ex) return new Response<CreateOutputDTO>("Invalid request");
-
+                if (createInputDTO.ParentId != null)
+                {
+                    var ex = _categoryRepo.IsExist((int)createInputDTO.ParentId);
+                    if (!ex) return new Response<CreateOutputDTO>("Invalid request");
+                }
+               
                 Category category = _mapper.Map<Category>(createInputDTO);
 
                 category.DateModified = DateTimeOffset.UtcNow;
@@ -37,7 +40,7 @@ namespace Dmd.Infrastructure.Business
                 var result = _mapper.Map<CreateOutputDTO>(category);
                 return new Response<CreateOutputDTO>(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 return new Response<CreateOutputDTO>("request error");
