@@ -1,4 +1,6 @@
 ﻿
+using Dmd.Api.Endpoints.CategoryEndpoints;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

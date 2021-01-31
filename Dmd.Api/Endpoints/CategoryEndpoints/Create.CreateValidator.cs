@@ -1,4 +1,8 @@
-﻿using FluentValidation;
+﻿using Application.Features.Categories.Commands.CreateCategory;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +17,10 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
             RuleFor(s => s.Title)
                 .NotEmpty()
                 .MinimumLength(5);
+
+            RuleFor(s => s.Parent)
+                .InclusiveBetween(1, Int32.MaxValue).WithMessage("Не верный запрос");
         }
     }
+
 }

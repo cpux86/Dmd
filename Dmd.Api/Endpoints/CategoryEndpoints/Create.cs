@@ -28,22 +28,12 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         [HttpPost("api/v1/category/create/")]
         public async override Task<ActionResult<Responce<CreateCategoryResponse>>> HandleAsync(CreateCategoryRequest request, CancellationToken cancellationToken = default)
         {
-            if (ModelState.IsValid)
-            {
-
-            }
-
-            var validator = new CreateValidator();
-            if (!validator.Validate(request).IsValid) 
-                return BadRequest(new Response<CreateCategoryResponse>("Invalid request, error valitaion"));
-
             CreateInputDTO createInputDTO = _mapper.Map<CreateInputDTO>(request);
             var result = await _categoryManager.Create(createInputDTO);
             var categoryResp = _mapper.Map<CreateCategoryResponse>(result.Data);
             if (!result.Succeeded) return BadRequest(new Responce<CreateCategoryResponse>("Invalid request."));
 
             return Ok(new Responce<CreateCategoryResponse>(categoryResp, "succeeded"));
-
         }
     }
 }

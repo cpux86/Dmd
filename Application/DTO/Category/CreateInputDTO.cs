@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Application.DTO.Category
@@ -23,6 +24,7 @@ namespace Application.DTO.Category
         /// </summary>
         public int? Sort { get; set; }
 
+        //[Range(1, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
         public int? ParentId { get; set; }
     }
 }

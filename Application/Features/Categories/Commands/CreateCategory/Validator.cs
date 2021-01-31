@@ -9,9 +9,9 @@ namespace Application.Features.Categories.Commands.CreateCategory
     {
         public Validator()
         {
-            RuleFor(s => s.Title)
-                .NotEmpty()
-                .MinimumLength(5);
+            //RuleFor(s => s.Title)
+            //    .NotEmpty()
+            //    .MinimumLength(5);
         }
     }
 }

@@ -13,6 +13,9 @@ namespace Dmd.Api.Endpoints.CategoryEndpoints
         public string Title { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
+
+        
+        //[Range(1, int.MaxValue, ErrorMessageResourceType = typeof(Responce<string>), ErrorMessage = "Please enter valid integer Number")]
         public int? Parent { get; set; }
     }
 }

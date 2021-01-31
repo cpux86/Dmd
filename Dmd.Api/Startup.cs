@@ -2,9 +2,13 @@
 using Application;
 using Application.Interfaces;
 using AutoMapper;
+using Dmd.Api.Endpoints;
+using Dmd.Api.Endpoints.CategoryEndpoints;
 using Dmd.Api.Extensions;
 using Dmd.Infrastructure.Business;
 using Dmd.Infrastructure.Data;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,12 +34,21 @@ namespace Dmd.Api
                 .AddTransient<ICategoryManager, CategoryMenager>()
                 .AddApiVersioningExtension();
 
-            
+            services.AddMvc(opt =>
+            {
+
+            }).AddFluentValidation();
+
+            services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
+
+            //services.AddTransient<IValidator<CreateCategoryRequest>, CreateValidator>();
+
             services.AddInfrastuctureData(Configuration);
             services.AddApplicationLayer();
 
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
