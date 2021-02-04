@@ -27,14 +27,7 @@ namespace Dmd.Infrastructure.Business
         {
             try
             {
-                if (createInputDTO.ParentId != null)
-                {
-                    var ex = _categoryRepo.IsExist((int)createInputDTO.ParentId);
-                    if (!ex) return new Response<CreateOutputDTO>("Invalid request");
-                }
-               
-                Category category = _mapper.Map<Category>(createInputDTO);
-
+                var category = _mapper.Map<Category>(createInputDTO);
                 category.DateModified = DateTimeOffset.UtcNow;
                 await _categoryRepo.AddAsync(category);
                 var result = _mapper.Map<CreateOutputDTO>(category);

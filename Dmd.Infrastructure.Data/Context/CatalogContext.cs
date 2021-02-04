@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace Dmd.Infrastructure.Data
 {
-    public class ApplicationContext : DbContext
+    public class CatalogContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Properties> Properties { get; set; }
@@ -16,7 +16,7 @@ namespace Dmd.Infrastructure.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
 
-        public ApplicationContext()
+        public CatalogContext()
         {
             //Database.EnsureDeleted();
             Database.EnsureCreated();

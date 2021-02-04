@@ -13,9 +13,9 @@ namespace Dmd.Infrastructure.Data.Repository
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
-        private readonly ApplicationContext _db;
+        private readonly CatalogContext _db;
 
-        public GenericRepositoryAsync(ApplicationContext db)
+        public GenericRepositoryAsync(CatalogContext db)
         {
             _db = db;
         }
@@ -67,5 +67,6 @@ namespace Dmd.Infrastructure.Data.Repository
         {
             throw new NotImplementedException();
         }
+
     }
 }

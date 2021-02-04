@@ -14,7 +14,7 @@ namespace Dmd.Infrastructure.Data
         public static void AddInfrastuctureData(this IServiceCollection services, IConfiguration configuration)
         {
             // Регестрируем контекст
-            services.AddDbContext<ApplicationContext>();
+            services.AddDbContext<CatalogContext>();
             #region Repositories
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
 

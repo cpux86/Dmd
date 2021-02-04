@@ -13,11 +13,12 @@ namespace Dmd.Infrastructure.Data.Repository
 {
     public class CategoryRepositoryAsync : GenericRepositoryAsync<Category>, ICategoryRepositoryAsync
     {
-        private readonly ApplicationContext _db;
-        public CategoryRepositoryAsync(ApplicationContext context) : base(context)
+        private readonly CatalogContext _db;
+        public CategoryRepositoryAsync(CatalogContext context) : base(context)
         {
             _db = context;           
         }
+
         /// <summary>
         /// Существует ли категория с указанным id
         /// </summary>
@@ -25,7 +26,8 @@ namespace Dmd.Infrastructure.Data.Repository
         /// <returns></returns>
         public bool IsExist(int catId)
         {
-            return _db.Categories.Where(e => e.Id == catId).Any();
+            //return _db.Categories.Where(e => e.Id == catId).Any();
+            return _db.Categories.Any(e => e.Id == catId);
         }
 
         /// <summary>

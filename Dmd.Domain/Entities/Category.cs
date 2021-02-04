@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dmd.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,8 +8,9 @@ using System.Linq;
 namespace Dmd.Domain.Entities
 {
 
-    public class Category : BaseEntities
+    public class Category : AuditableBaseEntity
     {
+        [Required]
         /// <summary>
         /// Заголовок категории
         /// </summary>
@@ -29,10 +31,6 @@ namespace Dmd.Domain.Entities
         public int? ParentId { get; set; }
         public Category Parent { get; set; }
         public ICollection<Category> Items { get; set; }
-        /// <summary>
-        /// Дата модификации
-        /// </summary>
-        public DateTimeOffset DateModified { get; set; }
     }
 
 }

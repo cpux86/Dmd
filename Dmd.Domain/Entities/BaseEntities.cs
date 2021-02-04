@@ -7,7 +7,7 @@ namespace Dmd.Domain.Entities
 {
     public abstract class BaseEntities
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
         
     }
 }
