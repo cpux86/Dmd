@@ -20,16 +20,13 @@ namespace Dmd.Domain.Entities
         /// <summary>
         /// Характеристики заказа или особенности услуги
         /// </summary>
-        public List<Properties> Properties { get; set; }
+        //public List<Properties> Properties { get; set; }
 
-        public int CatalogId { get; set; }
+        //public int CatalogId { get; set; }
         /// <summary>
         /// Каталог к которому принадлежить данный товар или услуга
         /// </summary>
-        public Category Catalog { get; set; }
-        /// <summary>
-        /// Счетчик ссылок на данный товар или услугу
-        /// </summary>
-        public int ReferenceCounter { get; set; }
+        //public Category Catalog { get; set; }
+
     }
 }

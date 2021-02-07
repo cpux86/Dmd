@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Dmd.Infrastructure.Business
 {
-    public class CategoryMenager : ICategoryManager
+    public class CategoryManager : ICategoryManager
     {
         private readonly ICategoryRepositoryAsync _categoryRepo;
         private readonly IMapper _mapper;
 
-        public CategoryMenager(ICategoryRepositoryAsync categoryRepo, IMapper mapper)
+        public CategoryManager(ICategoryRepositoryAsync categoryRepo, IMapper mapper)
         {
             _categoryRepo = categoryRepo;
             _mapper = mapper;

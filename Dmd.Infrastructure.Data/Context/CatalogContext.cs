@@ -5,6 +5,7 @@ using Dmd.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Threading;
+using Dmd.Domain.ValueObject.Property;
 
 namespace Dmd.Infrastructure.Data
 {
@@ -15,6 +16,8 @@ namespace Dmd.Infrastructure.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<PropertyData> Property_Datas { get; set; }
 
         public CatalogContext()
         {
@@ -42,7 +45,7 @@ namespace Dmd.Infrastructure.Data
         public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder =>
         {
             //builder.AddConsole();
-            builder.AddProvider(new MyLoggerProvider());    // указываем наш провайдер логгирования
+            //builder.AddProvider(new MyLoggerProvider());    // указываем наш провайдер логгирования
         });
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
