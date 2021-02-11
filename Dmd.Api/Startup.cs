@@ -73,5 +73,6 @@ namespace Dmd.Api
                 endpoints.MapControllers();
             });
         }
+
     }
 }

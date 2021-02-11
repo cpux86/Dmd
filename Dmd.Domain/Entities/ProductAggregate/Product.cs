@@ -20,7 +20,9 @@ namespace Dmd.Domain.Entities
         /// <summary>
         /// Характеристики заказа или особенности услуги
         /// </summary>
-        //public List<Properties> Properties { get; set; }
+        public List<Property> Properties { get; set; }
+
+        public List<Order> Orders { get; set; }
 
         //public int CatalogId { get; set; }
         /// <summary>

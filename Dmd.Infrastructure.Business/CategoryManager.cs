@@ -28,7 +28,7 @@ namespace Dmd.Infrastructure.Business
             try
             {
                 var category = _mapper.Map<Category>(createInputDTO);
-                category.DateModified = DateTimeOffset.UtcNow;
+                category.DateModified = DateTime.UtcNow;
                 await _categoryRepo.AddAsync(category);
                 var result = _mapper.Map<CreateOutputDTO>(category);
                 return new Response<CreateOutputDTO>(result);

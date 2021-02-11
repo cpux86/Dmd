@@ -1,5 +1,4 @@
 ﻿using Dmd.Domain.Entities;
-using Dmd.Domain.Specification;
 using Dmd.Infrastructure.Data;
 using System;
 using System.Collections.Generic;

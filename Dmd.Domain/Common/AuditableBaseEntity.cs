@@ -10,6 +10,6 @@ namespace Dmd.Domain.Common
         /// <summary>
         /// Дата модификации
         /// </summary>
-        public DateTimeOffset DateModified { get; set; }
+        public DateTime DateModified { get; set; }
     }
 }
