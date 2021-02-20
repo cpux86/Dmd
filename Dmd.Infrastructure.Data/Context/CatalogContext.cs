@@ -31,8 +31,11 @@ namespace Dmd.Infrastructure.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\MSSQLLocaldb;Database=Blogging;Integrated Security=True");
+            //optionsBuilder.UseSqlServer(
+            //    @"Server=(localdb)\MSSQLLocaldb;Database=Blogging;Integrated Security=True");
+
+            optionsBuilder.UseSqlServer(@"Data Source = localhost, 1433; Database=Dmd; User ID = sa; Password = 1AC290066f; Connect Timeout = 30; Encrypt = False;TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
+
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
@@ -44,7 +47,7 @@ namespace Dmd.Infrastructure.Data
         // устанавливаем фабрику логгера
         public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder =>
         {
-            //builder.AddConsole();
+            builder.AddConsole();
             //builder.AddProvider(new MyLoggerProvider());    // указываем наш провайдер логгирования
         });
 

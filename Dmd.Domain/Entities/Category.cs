@@ -23,6 +23,7 @@ namespace Dmd.Domain.Entities
         /// Описание категории
         /// </summary>
         public string Description { get; set; }
+        public List<Product> Products { get; set; }
         /// <summary>
         /// Порядок сортировки
         /// </summary>
