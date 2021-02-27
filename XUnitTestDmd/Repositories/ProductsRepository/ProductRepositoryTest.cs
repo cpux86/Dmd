@@ -1,5 +1,5 @@
 ﻿using Dmd.Domain.Entities;
-using Dmd.Domain.ValueObject.Property;
+using Dmd.Domain.Entities.ProductAggregate;
 using Dmd.Infrastructure.Data;
 using Dmd.Infrastructure.Data.Repository;
 using System;

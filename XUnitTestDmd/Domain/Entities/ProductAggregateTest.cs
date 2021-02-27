@@ -1,4 +1,5 @@
 ﻿using Dmd.Domain.Entities;
+using Dmd.Domain.Entities.ProductAggregate;
 using Dmd.Infrastructure.Business;
 using Dmd.Infrastructure.Data.Repository;
 using System;

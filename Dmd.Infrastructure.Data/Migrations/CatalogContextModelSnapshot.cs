@@ -19,6 +19,21 @@ namespace Dmd.Infrastructure.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DataProperty", b =>
+                {
+                    b.Property<int>("DataId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PropertiesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DataId", "PropertiesId");
+
+                    b.HasIndex("PropertiesId");
+
+                    b.ToTable("DataProperty");
+                });
+
             modelBuilder.Entity("Dmd.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -116,12 +131,30 @@ namespace Dmd.Infrastructure.Data.Migrations
                     b.ToTable("Photo");
                 });
 
-            modelBuilder.Entity("Dmd.Domain.Entities.Product", b =>
+            modelBuilder.Entity("Dmd.Domain.Entities.ProductAggregate.Data", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Data");
+                });
+
+            modelBuilder.Entity("Dmd.Domain.Entities.ProductAggregate.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -131,23 +164,22 @@ namespace Dmd.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Dmd.Domain.Entities.Property", b =>
+            modelBuilder.Entity("Dmd.Domain.Entities.ProductAggregate.Property", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Value")
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -206,6 +238,21 @@ namespace Dmd.Infrastructure.Data.Migrations
                     b.ToTable("OrderProduct");
                 });
 
+            modelBuilder.Entity("DataProperty", b =>
+                {
+                    b.HasOne("Dmd.Domain.Entities.ProductAggregate.Data", null)
+                        .WithMany()
+                        .HasForeignKey("DataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Dmd.Domain.Entities.ProductAggregate.Property", null)
+                        .WithMany()
+                        .HasForeignKey("PropertiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Dmd.Domain.Entities.Category", b =>
                 {
                     b.HasOne("Dmd.Domain.Entities.Category", "Parent")
@@ -226,14 +273,23 @@ namespace Dmd.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Dmd.Domain.Entities.Photo", b =>
                 {
-                    b.HasOne("Dmd.Domain.Entities.Product", null)
+                    b.HasOne("Dmd.Domain.Entities.ProductAggregate.Product", null)
                         .WithMany("Image")
                         .HasForeignKey("ProductId");
                 });
 
-            modelBuilder.Entity("Dmd.Domain.Entities.Property", b =>
+            modelBuilder.Entity("Dmd.Domain.Entities.ProductAggregate.Product", b =>
                 {
-                    b.HasOne("Dmd.Domain.Entities.Product", null)
+                    b.HasOne("Dmd.Domain.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Dmd.Domain.Entities.ProductAggregate.Property", b =>
+                {
+                    b.HasOne("Dmd.Domain.Entities.ProductAggregate.Product", null)
                         .WithMany("Properties")
                         .HasForeignKey("ProductId");
                 });
@@ -246,7 +302,7 @@ namespace Dmd.Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Dmd.Domain.Entities.Product", null)
+                    b.HasOne("Dmd.Domain.Entities.ProductAggregate.Product", null)
                         .WithMany()
                         .HasForeignKey("ProductsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -256,6 +312,8 @@ namespace Dmd.Infrastructure.Data.Migrations
             modelBuilder.Entity("Dmd.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Items");
+
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Dmd.Domain.Entities.Customer", b =>
@@ -263,7 +321,7 @@ namespace Dmd.Infrastructure.Data.Migrations
                     b.Navigation("History");
                 });
 
-            modelBuilder.Entity("Dmd.Domain.Entities.Product", b =>
+            modelBuilder.Entity("Dmd.Domain.Entities.ProductAggregate.Product", b =>
                 {
                     b.Navigation("Image");
 

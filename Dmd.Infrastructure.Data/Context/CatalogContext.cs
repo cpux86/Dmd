@@ -5,6 +5,7 @@ using Dmd.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Threading;
+using Dmd.Domain.Entities.ProductAggregate;
 
 namespace Dmd.Infrastructure.Data
 {
@@ -16,7 +17,7 @@ namespace Dmd.Infrastructure.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
 
-        //public DbSet<PropertyData> Property_Data { get; set; }
+        //public DbSet<PropertyData> PropertyDatas { get; set; }
 
         public CatalogContext()
         {

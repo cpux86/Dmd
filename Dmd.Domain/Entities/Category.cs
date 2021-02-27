@@ -1,4 +1,5 @@
 ﻿using Dmd.Domain.Common;
+using Dmd.Domain.Entities.ProductAggregate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -1,18 +1,22 @@
 ﻿using Dmd.Domain.Entities;
+using Dmd.Domain.Entities.ProductAggregate;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Dmd.Domain.Entities.ProductAggregate
+namespace Application.DTO.Product
 {
-    public class Product : BaseEntities
+    public class ProductDTO : BaseDTO
     {
         public string Title { get; set; }
         /// <summary>
         /// Описание товара или услуги
         /// </summary>
         public string Description { get; set; }
+        /// <summary>
+        /// Принадлежность к категории
+        /// </summary>
+        public int CategoryId { get; set; }
         /// <summary>
         /// Изображения данного товора или услуги
         /// </summary>
@@ -21,13 +25,5 @@ namespace Dmd.Domain.Entities.ProductAggregate
         /// Характеристики заказа или особенности услуги
         /// </summary>
         public List<Property> Properties { get; set; }
-
-        public List<Order> Orders { get; set; }
-
-        //public int CatalogId { get; set; }
-        /// <summary>
-        /// Каталог к которому принадлежить данный товар или услуга
-        /// </summary>
-        public Category Category{ get; set; }
     }
 }
